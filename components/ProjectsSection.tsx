@@ -141,7 +141,7 @@ export function ProjectsSection() {
                       </Badge>
                       <div className="flex items-center gap-1 text-xs text-muted-foreground">
                         <Calendar className="w-3 h-3" />
-                        2025
+                        2024
                       </div>
                     </div>
                     <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>

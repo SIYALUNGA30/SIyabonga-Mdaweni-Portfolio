@@ -22,7 +22,7 @@ export function Layout({ children }: LayoutProps) {
         <div className="w-full max-w-6xl mx-auto px-2 sm:px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="animate-slideIn">
-              <p>&copy; 2025 Siyabonga Mdaweni. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Siyabonga Mdaweni. All rights reserved.</p>
               <p className="text-sm opacity-75">
                 IT Support • Available for Opportunities
               </p>

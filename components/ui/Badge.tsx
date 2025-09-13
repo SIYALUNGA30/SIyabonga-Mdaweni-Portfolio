@@ -1,7 +1,5 @@
 import React from 'react';
 
-// FIX: Changed from interface to type alias with intersection to fix a type inference issue.
-// This ensures `className` and other HTML attributes are correctly included in BadgeProps.
 type BadgeProps = React.HTMLAttributes<HTMLDivElement> & {
   variant?: 'default' | 'secondary' | 'outline';
 };

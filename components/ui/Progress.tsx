@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -9,7 +8,7 @@ const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
   ({ className, value, ...props }, ref) => (
     <div
       ref={ref}
-      className={`relative h-4 w-full overflow-hidden rounded-full bg-secondary ${className}`}
+      className={`relative h-2 w-full overflow-hidden rounded-full bg-secondary ${className}`}
       {...props}
     >
       <div

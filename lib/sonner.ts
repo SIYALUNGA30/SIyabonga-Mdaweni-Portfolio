@@ -1,4 +1,3 @@
-
 type ToastOptions = {
     description?: string;
     duration?: number;

@@ -8,7 +8,7 @@ export function ExperienceSection() {
       title: "Advanced Digital Associate",
       company: "Capaciti",
       location: "Braamfontein,Johannesburg",
-      duration: "July 2025 - Present",
+      duration: "July 2024 - Present",
       type: "Bootcamp",
       description: "Recently completed intensive 7-week AI/ML engineering bootcamp focusing on practical applications of artificial intelligence. Currently seeking opportunities to apply newly acquired skills in generative AI, machine learning, and responsible AI development.",
       achievements: [
@@ -25,7 +25,7 @@ export function ExperienceSection() {
       title: "Indexer",
       company: "Department of Home Affairs",
       location: "Silverton, Pretoria",
-      duration: "January, 2024 - June, 2025",
+      duration: "January 2024 - June 2024",
       type: "Contract",
       description: "Entry-level software development role focusing on web application development and database management. Gained foundational experience in full-stack development and collaborative software engineering practices.",
       achievements: [

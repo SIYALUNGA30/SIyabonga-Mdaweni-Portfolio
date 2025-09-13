@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Toast as ToastType } from '../types';
 import { CheckCircle, AlertCircle } from './icons/LucideIcons';
@@ -65,4 +64,4 @@ export const Toaster: React.FC = () => {
       </div>
     </div>
   );
-};
+}
