@@ -23,5 +23,7 @@ Version Control: Git + GitHub
 
 You can reach me via:
 Email: lungasiyabonga32@gmail.com
+
 LinkedIn: https://linkedin.com/in/siyabonga-mdaweni-25a0b71ab
+
 GitHub: https://github.com/SIYALUNGA30
