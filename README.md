@@ -16,3 +16,12 @@ Version Control: Git + GitHub
 ✅ Showcases my projects and skills
 ✅ Contact form / social links
 ✅ Deployed with continuous integration
+
+.
+
+📬 Contact
+
+You can reach me via:
+Email: lungasiyabonga32@gmail.com
+LinkedIn: https://linkedin.com/in/siyabonga-mdaweni-25a0b71ab
+GitHub: https://github.com/SIYALUNGA30
