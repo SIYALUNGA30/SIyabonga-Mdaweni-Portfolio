@@ -1,12 +1,21 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+🌐 My Portfolio
 
-# Run and deploy your AI Studio app
+📖 About
 
-This contains everything you need to run your app locally.
+This is my personal portfolio website, designed to showcase my projects, skills, and experience as a developer. It was built using React + TypeScript + TailwindCSS + Formspree and deployed with Vercel for seamless and fast hosting.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1irc_vX5HYxWfLkHz23x9PXaVIo_CaKwM
+🔗 Live Demo: https://s-iyabonga-mdaweni-portfolio.vercel.app/
+
+Hosting: Vercel
+
+Version Control: Git + GitHub
+
+🚀 Features
+
+✅ Responsive design – works on all devices
+✅ Showcases my projects and skills
+✅ Contact form / social links
+✅ Deployed with continuous integration
 
 ## Run Locally
 
