@@ -24,7 +24,7 @@ export function Layout({ children }: LayoutProps) {
             <div className="animate-slideIn">
               <p>&copy; {new Date().getFullYear()} Siyabonga Mdaweni. All rights reserved.</p>
               <p className="text-sm opacity-75">
-                IT Support • Available for Opportunities
+                IT Support | Aspiring AI/ML Engineer • Available for Opportunities
               </p>
             </div>
             <div className="flex gap-4 text-sm animate-slideIn">
