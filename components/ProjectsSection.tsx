@@ -26,23 +26,6 @@ export function ProjectsSection() {
       codeUrl: "https://github.com/Nompil/Smart-Irrigation-Scheduler" 
     },
     {
-      title: "Cosmic Quill",
-      description: "Cosmic Quill is a creative writing platform prototyped in Figma and implemented as a single-page React application with Tailwind CSS. It leverages Google Gemini 1.5 Flash API for real-time text generation, text-to-speech narration, and image-based prompts, while Supabase handles authentication, storage, and real-time collaboration. Designed for storytellers, students, and creative teams, it offers an accessible, scalable, and immersive experience.",
-      technologies: ["OpenAI API", "Prompt Engineering", "Python", "FigmaMake"],
-      features: [
-        "5+ optimized prompt templates for different scenarios",
-        "User interface with 3+ customization parameters",
-        "Results saving and export functionality",
-        "Performance tracking for generation time and token usage",
-        "Input validation and output filtering mechanisms"
-      ],
-      deliverables: ["Functional generator tool", "Prompt library", "Technical documentation"],
-      imageUrl: "https://image2url.com/images/1757509397687-e0ae63ca-22d1-4f8a-8b81-8db4de9df35b.png",
-      videoUrl: "https://capeitinitiative-my.sharepoint.com/:v:/g/personal/siyabonga_mdaweni_capaciti_org_za/EcM5cgiDcABJka6w3p_A-rkBga_lcnFLdvR603YbTSe-hg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=DOkbfA",
-      demoUrl: "https://apron-swarm-24108016.figma.site",
-      codeUrl: "https://github.com/SIYALUNGA30/project-2"
-    },
-    {
       title: "AI Resume Builder",
       description: "Developed an intelligent resume generation system creating customized, ATS-friendly resumes. Features industry-specific keyword optimization, multiple template options, and job description matching analysis.",
       technologies: ["React", "Node.js", "OpenAI API", "Tailwind CSS", "PDF-lib"],
