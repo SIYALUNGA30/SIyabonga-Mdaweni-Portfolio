@@ -40,7 +40,7 @@ export function HeroSection() {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-muted-foreground mb-6 opacity-0 animate-fallDown-3">
-                  IT Support
+                  IT Support | Aspiring AI/ML Engineer
                 </p>
                 
                 <p className="text-lg text-muted-foreground max-w-lg leading-relaxed mb-6 opacity-0 animate-fallDown-4">
