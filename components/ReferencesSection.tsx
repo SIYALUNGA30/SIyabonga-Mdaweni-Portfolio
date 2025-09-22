@@ -23,7 +23,7 @@ export function ReferencesSection() {
   ];
 
   return (
-    <section id="references" className="py-12 bg-white/10 backdrop-blur-sm">
+    <section id="references" className="py-12 bg-secondary/20 backdrop-blur-sm">
       <div className="w-full max-w-6xl mx-auto px-2 sm:px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-chart-5 to-primary bg-clip-text text-transparent">References</h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "./ui/Button";
-import { Github, Linkedin, Mail, MapPin, Phone, Download } from "./icons/LucideIcons";
+import { Github, Linkedin, Mail, MapPin, Phone, Download, ChevronDown } from "./icons/LucideIcons";
 import { downloadResume, resumeConfig } from "../config/ResumeConfig";
 
 export function HeroSection() {
@@ -102,7 +102,7 @@ export function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative animate-float">
               {/* Profile picture placeholder - user will upload manually */}
-              <div className="w-96 h-96 bg-gradient-to-br from-primary/20 to-purple-500/30 rounded-full flex items-center justify-center overflow-hidden border-4 border-white/50 shadow-2xl backdrop-blur-sm">
+              <div className="w-96 h-96 bg-gradient-to-br from-primary/20 to-purple-500/30 rounded-full flex items-center justify-center overflow-hidden border-4 border-primary/20 shadow-2xl backdrop-blur-sm">
                 <img 
                   src="https://image2url.com/images/1757771346808-a2a593b6-03f0-47b4-be9a-df5b41140b16.png" 
                   alt="Siyabonga Mdaweni"
@@ -128,6 +128,11 @@ export function HeroSection() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+        <a href="#overview" aria-label="Scroll to overview" className="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors animate-bounce">
+          <ChevronDown className="w-8 h-8" />
+        </a>
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export function AboutSection() {
           <div>
             <h3 className="text-2xl mb-6">Professional Background</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              I am an enthusiastic IT Support professional and AI/ML Enginner based in Johannesburg, South Africa, with experience in data capturing systems and a strong foundation in troubleshooting and technical support. I recently completed an intensive 8-week AI/ML engineering bootcamp, gaining skills in generative AI, prompt engineering, and end-to-end solution development.
+              I am an enthusiastic IT Support professional and Indexer based in Johannesburg, South Africa, with experience in data capturing systems and a strong foundation in troubleshooting and technical support. I recently completed an intensive 8-week AI/ML engineering bootcamp, gaining skills in generative AI, prompt engineering, and end-to-end solution development.
             </p>
             
             <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -46,7 +46,7 @@ export function AboutSection() {
             </p>
           </div>
           
-          <Card className="hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 bg-white/80 backdrop-blur-sm">
+          <Card className="hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
             <CardContent className="p-6">
               <h4 className="mb-4">Key Highlights</h4>
               <div className="space-y-3">

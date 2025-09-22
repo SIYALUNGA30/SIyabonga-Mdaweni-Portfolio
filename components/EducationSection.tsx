@@ -39,7 +39,7 @@ export function EducationSection() {
 
         <div className="space-y-8">
           {education.map((edu, index) => (
-            <Card key={index} className="border-l-4 border-l-primary hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 bg-white/80 backdrop-blur-sm group">
+            <Card key={index} className="border-l-4 border-l-primary hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 group">
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>

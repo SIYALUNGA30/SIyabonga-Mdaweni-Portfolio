@@ -1,29 +1,20 @@
-🌐 My Portfolio
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-📖 About
+# Run and deploy your AI Studio app
 
-This is my personal portfolio website, designed to showcase my projects, skills, and experience as a developer. It was built using React + TypeScript + TailwindCSS + Formspree and deployed with Vercel for seamless and fast hosting.
+This contains everything you need to run your app locally.
 
-🔗 Live Demo: https://s-iyabonga-mdaweni-portfolio.vercel.app/
+View your app in AI Studio: https://ai.studio/apps/drive/1irc_vX5HYxWfLkHz23x9PXaVIo_CaKwM
 
-Hosting: Vercel
+## Run Locally
 
-Version Control: Git + GitHub
+**Prerequisites:**  Node.js
 
-🚀 Features
 
-✅ Responsive design – works on all devices
-✅ Showcases my projects and skills
-✅ Contact form / social links
-✅ Deployed with continuous integration
-
-.
-
-📬 Contact
-
-You can reach me via:
-Email: lungasiyabonga32@gmail.com
-
-LinkedIn: https://linkedin.com/in/siyabonga-mdaweni-25a0b71ab
-
-GitHub: https://github.com/SIYALUNGA30
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

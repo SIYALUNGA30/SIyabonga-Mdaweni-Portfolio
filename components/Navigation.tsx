@@ -36,7 +36,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border shadow-md">
       <div className="w-full mx-auto px-2 sm:px-4 py-3">
         <div className="flex items-center justify-between animate-slideIn-fast">
           {/* Left side - Profile and Name */}
@@ -96,7 +96,7 @@ export function Navigation() {
 
           {/* Mobile Navigation Menu */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-border shadow-lg md:hidden">
+            <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border shadow-lg md:hidden">
               <div className="flex flex-col p-4 space-y-2">
                 {navLinks.map(link => (
                     <button 

@@ -130,7 +130,7 @@ export function ContactSection() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 mb-12 animate-fadeInLeft">
-          <Card className="hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 bg-white/80 backdrop-blur-sm">
+          <Card className="hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
             <CardHeader>
               <CardTitle>Get In Touch</CardTitle>
             </CardHeader>
@@ -153,7 +153,7 @@ export function ContactSection() {
                 </div>
               ))}
               
-              <div className="pt-4 border-t">
+              <div className="pt-4 border-t border-border">
                 <h4 className="mb-3">Social & Professional</h4>
                 <div className="space-y-3">
                   {socialLinks.map((link, index) => (
@@ -174,7 +174,7 @@ export function ContactSection() {
             </CardContent>
           </Card>
           
-          <Card className="hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 bg-white/80 backdrop-blur-sm">
+          <Card className="hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Send className="w-5 h-5" />
@@ -275,11 +275,11 @@ export function ContactSection() {
           </Button>
         </div>
         
-        <Card className="hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm animate-bounceIn">
+        <Card className="hover:shadow-xl transition-all duration-300 animate-bounceIn">
           <CardContent className="p-6 text-center">
             <h3 className="mb-4">Current Status</h3>
             <div className="flex justify-center mb-4">
-              <Badge variant="secondary" className="bg-green-100 text-green-800">
+              <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">
                 Available for Opportunities
               </Badge>
             </div>
