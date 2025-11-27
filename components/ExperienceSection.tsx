@@ -5,21 +5,21 @@ import { Briefcase, Calendar, MapPin } from "./icons/LucideIcons";
 export function ExperienceSection() {
   const experiences = [
     {
-      title: "Advanced Digital Associate",
+      title: "Projects and Training",
       company: "Capaciti",
-      location: "Braamfontein,Johannesburg",
+      location: "Braamfontein, Johannesburg",
       duration: "July 2025 - Present",
-      type: "Bootcamp",
-      description: "Recently completed intensive 7-week AI/ML engineering bootcamp focusing on practical applications of artificial intelligence. Currently seeking opportunities to apply newly acquired skills in generative AI, machine learning, and responsible AI development.",
+      type: "Bootcamp & Certification",
+      description: "Engaged in comprehensive training covering AI/ML Engineering and IT Support fundamentals, focusing on practical application and collaborative problem-solving.",
       achievements: [
-        "Built 6+ AI applications from concept to deployment",
-        "Developed expertise in OpenAI API integration and prompt engineering",
-        "Created sentiment analysis dashboard with 89% accuracy",
-        "Implemented ATS-optimized resume builder with multiple templates",
-        "Conducted comprehensive bias audit on ML models",
-        "Integrated multiple AI technologies in capstone project"
+        "AI/ML Engineering Bootcamp (2 months): Built chatbots and applied AI solutions to simplify tasks.",
+        "Collaborated on group projects to design and implement systems.",
+        "Google IT Support Professional Certificate: Gained hands-on experience in troubleshooting, IT infrastructure, and ticketing systems.",
+        "Developed skills in Bits and Bytes, network fundamentals, and customer support.",
+        "Group Projects: Worked with teams to design, implement, and troubleshoot systems.",
+        "Applied problem-solving skills to resolve daily technical challenges."
       ],
-      technologies: ["Python", "OpenAI API","Gemini", "Figma", "Hugging Face", "React", "Streamlit", "FastAPI", "AWS"]
+      technologies: ["Python", "OpenAI API", "IT Support", "Networking", "Troubleshooting", "System Design", "Customer Support"]
     },
     {
       title: "Indexer",
@@ -27,9 +27,9 @@ export function ExperienceSection() {
       location: "Silverton, Pretoria",
       duration: "January 2024 - June 2025",
       type: "Contract",
-      description: "Entry-level software development role focusing on web application development and database management. Gained foundational experience in full-stack development and collaborative software engineering practices.",
+      description: "I contributed to a digitization project where I was responsible for capturing information from physical records and accurately entering it into the company’s indexing system. This work ensured that documents were properly organized, easily searchable, and accessible for future reference, supporting the company’s transition from manual record-keeping to a streamlined digital environment.",
       achievements: [
-        "Input data from various sources into databases, spreadsheets, or systems.",
+        "Input data from various sources into systems.",
         "Verify accuracy of data and correct errors or inconsistencies.",
         "Maintain up-to-date and organized records.",
         "Scan and identify relevant information from documents and reports.",
@@ -48,7 +48,7 @@ export function ExperienceSection() {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-chart-3 to-chart-4 bg-clip-text text-transparent">Experience</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and hands-on experience in Indexing and AI/ML Engineering.
+            My professional journey and hands-on experience in Indexing, IT Support, and AI/ML Engineering.
           </p>
         </div>
 

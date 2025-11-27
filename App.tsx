@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout } from './components/Layout.tsx';
-import { Router } from './components/Router.tsx';
+import { Layout } from './components/Layout';
+import { Router } from './components/Router';
 
 function App() {
   return (

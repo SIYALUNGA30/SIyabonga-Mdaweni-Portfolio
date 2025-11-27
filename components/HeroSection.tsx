@@ -8,6 +8,14 @@ export function HeroSection() {
     window.location.hash = 'projects';
   };
 
+  const scrollToOverview = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('overview');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Dynamic Animated Background */}
@@ -35,19 +43,28 @@ export function HeroSection() {
 
               
               <div>
-                <h1 className="text-4xl md:text-6xl mb-4 bg-gradient-to-r from-blue-400 to-primary bg-clip-text text-transparent opacity-0 animate-fallDown-2">
+                <h1 className="text-4xl md:text-6xl mb-4 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-[200%_auto]">
                   Siyabonga Mdaweni
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-muted-foreground mb-6 opacity-0 animate-fallDown-3">
+                <p 
+                  className="text-xl md:text-2xl text-muted-foreground mb-6 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-muted-foreground via-foreground to-muted-foreground bg-[200%_auto]"
+                  style={{ animationDelay: '0.5s' }}
+                >
                   IT Support | Aspiring AI/ML Engineer
                 </p>
                 
-                <p className="text-lg text-muted-foreground max-w-lg leading-relaxed mb-6 opacity-0 animate-fallDown-4">
+                <p 
+                  className="text-lg text-muted-foreground max-w-lg leading-relaxed mb-6 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-muted-foreground via-foreground to-muted-foreground bg-[200%_auto]"
+                  style={{ animationDelay: '1s' }}
+                >
                   I have always been curious about technology and how it shapes our everyday lives. I enjoy exploring how systems work, solving technical problems, and learning new tools and skills. Helping others with their technical challenges gives me great satisfaction, and I am passionate about growing my knowledge to provide the best IT support possible.
                 </p>
 
-                <div className="space-y-2 text-muted-foreground opacity-0 animate-fallDown-5">
+                <div 
+                  className="space-y-2 text-muted-foreground opacity-0 animate-slideInUp"
+                  style={{ animationDelay: '1.2s' }}
+                >
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
                     <span>Johannesburg, Gauteng</span>
@@ -63,7 +80,10 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fallDown-6">
+              <div 
+                className="flex flex-col sm:flex-row gap-4 opacity-0 animate-slideInUp"
+                style={{ animationDelay: '1.4s' }}
+              >
                 <Button size="lg" onClick={navigateToProjects}>
                   View My Projects
                 </Button>
@@ -74,7 +94,10 @@ export function HeroSection() {
                 </Button>
               </div>
 
-              <div className="flex gap-4 opacity-0 animate-fallDown-7">
+              <div 
+                className="flex gap-4 opacity-0 animate-slideInUp"
+                style={{ animationDelay: '1.6s' }}
+              >
                 <Button variant="outline" size="sm" asChild>
                   <a href="https://linkedin.com/in/siyabonga-mdaweni-25a0b71ab" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-4 h-4 mr-2" />
@@ -130,7 +153,12 @@ export function HeroSection() {
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
-        <a href="#overview" aria-label="Scroll to overview" className="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors animate-bounce">
+        <a 
+          href="#overview" 
+          onClick={scrollToOverview}
+          aria-label="Scroll to overview" 
+          className="p-2 rounded-full text-primary hover:bg-primary/10 transition-colors animate-bounce block cursor-pointer"
+        >
           <ChevronDown className="w-8 h-8" />
         </a>
       </div>

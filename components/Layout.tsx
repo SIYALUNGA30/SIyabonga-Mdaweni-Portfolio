@@ -3,7 +3,7 @@ import { Navigation } from "./Navigation";
 import { Toaster } from "./Toaster";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {

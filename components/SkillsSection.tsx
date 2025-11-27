@@ -1,8 +1,14 @@
+
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/Card";
 import { Badge } from "./ui/Badge";
 import { Progress } from "./ui/Progress";
+import { Trophy, ExternalLink, Github, ChevronDown, ChevronUp } from "./icons/LucideIcons";
+import { Button } from "./ui/Button";
 
 export function SkillsSection() {
+  const [showAllSkills, setShowAllSkills] = useState(false);
+
   const skillCategories = [
     {
       title: "AI & Generative Technologies",
@@ -121,6 +127,8 @@ export function SkillsSection() {
     "Gemini.ai", "Obviously AI", "Lovable.ai", "Vercel", "Github"
   ];
 
+  const displayedSkills = showAllSkills ? skillCategories : skillCategories.slice(0, 3);
+
   return (
     <section id="skills" className="py-12 bg-background">
       <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
@@ -132,9 +140,9 @@ export function SkillsSection() {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {skillCategories.map((category, index) => (
-            <Card key={index}>
+        <div className="grid lg:grid-cols-3 gap-8 mb-8">
+          {displayedSkills.map((category, index) => (
+            <Card key={index} className="animate-fadeIn">
               <CardHeader>
                 <CardTitle className="text-xl">{category.title}</CardTitle>
               </CardHeader>
@@ -154,7 +162,27 @@ export function SkillsSection() {
           ))}
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="flex justify-center mb-12">
+            <Button 
+                variant="outline" 
+                onClick={() => setShowAllSkills(!showAllSkills)}
+                className="gap-2 group hover:border-primary/50"
+            >
+                {showAllSkills ? (
+                    <>
+                        Show Less Skills
+                        <ChevronUp className="w-4 h-4 transition-transform group-hover:-translate-y-1" />
+                    </>
+                ) : (
+                    <>
+                        View All Skills
+                        <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+                    </>
+                )}
+            </Button>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           <Card>
             <CardHeader>
               <CardTitle>Certifications & Credentials</CardTitle>
@@ -193,8 +221,91 @@ export function SkillsSection() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Achievements Section */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card className="border-l-4 border-l-chart-4 shadow-lg">
+             <CardHeader>
+               <CardTitle className="flex items-center gap-2 text-2xl">
+                 <Trophy className="w-6 h-6 text-chart-4" />
+                 Key Achievements
+               </CardTitle>
+             </CardHeader>
+             <CardContent>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1 text-primary">Scavenger Hunt Game Project (6 Weeks)</h3>
+                    <p className="text-sm text-muted-foreground mb-4 italic">Co-Organizer & Developer</p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      Together with my colleagues, I was tasked with designing and running a Scavenger Hunt Game over a six-week period. I was also an active part of the game as well. Leveraging the team’s creativity and collaboration, I developed a short quiz challenge that is divided into four timed sections, using <strong>Google Studio</strong> to put the idea into action.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                       <div className="bg-secondary/20 p-5 rounded-lg border border-border/50">
+                          <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
+                            Game Structure
+                          </h4>
+                          <ul className="space-y-3 text-sm text-muted-foreground">
+                            <li className="flex gap-2">
+                              <span className="font-bold text-chart-4">•</span>
+                              <span><strong className="text-foreground">Flag Guessing:</strong> Participants identify different country flags under time pressure.</span>
+                            </li>
+                            <li className="flex gap-2">
+                              <span className="font-bold text-chart-4">•</span>
+                              <span><strong className="text-foreground">IT Riddles:</strong> A set of technology-related riddles to test problem-solving and IT knowledge.</span>
+                            </li>
+                            <li className="flex gap-2">
+                              <span className="font-bold text-chart-4">•</span>
+                              <span><strong className="text-foreground">Emoji Decoding:</strong> Players interpret sequences of emojis to uncover hidden meanings or phrases.</span>
+                            </li>
+                            <li className="flex gap-2">
+                              <span className="font-bold text-chart-4">•</span>
+                              <span><strong className="text-foreground">Pixel Puzzle:</strong> A challenge where participants solve puzzles based on pixelated images.</span>
+                            </li>
+                          </ul>
+                       </div>
+
+                       <div className="bg-secondary/20 p-5 rounded-lg border border-border/50">
+                          <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
+                             Objectives
+                          </h4>
+                          <ul className="space-y-3 text-sm text-muted-foreground">
+                            {[
+                              "Keep participants entertained and engaged throughout the activity.",
+                              "Encourage teamwork by grouping individuals who may not know each other.",
+                              "Promote problem-solving and creative thinking in a fun environment.",
+                              "Motivate participants to work towards winning a prize."
+                            ].map((obj, i) => (
+                              <li key={i} className="flex gap-2">
+                                <span className="w-1.5 h-1.5 bg-chart-4 rounded-full mt-2 flex-shrink-0" />
+                                <span>{obj}</span>
+                              </li>
+                            ))}
+                          </ul>
+                       </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4">
+                      <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
+                         <a href="#" target="_blank" rel="noopener noreferrer">
+                           <ExternalLink className="w-4 h-4 mr-2" />
+                           View Deployment
+                         </a>
+                      </Button>
+                      <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
+                         <a href="#" target="_blank" rel="noopener noreferrer">
+                           <Github className="w-4 h-4 mr-2" />
+                           View Source Code
+                         </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+             </CardContent>
+          </Card>
+        </div>
         
-        <div className="mt-12">
+        <div>
           <Card>
             <CardHeader>
               <CardTitle>Areas of Expertise</CardTitle>
