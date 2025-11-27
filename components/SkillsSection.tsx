@@ -9,6 +9,12 @@ import { Button } from "./ui/Button";
 export function SkillsSection() {
   const [showAllSkills, setShowAllSkills] = useState(false);
 
+  // UPDATE THESE LINKS MANUALLY
+  const scavengerHuntLinks = {
+    deployment: "https://gemini-quiz-challenge-567954893740.us-west1.run.app/", 
+    sourceCode: "https://github.com/SIYALUNGA30/SIyabonga-Mdaweni-Portfolio"  
+  };
+
   const skillCategories = [
     {
       title: "AI & Generative Technologies",
@@ -73,20 +79,12 @@ export function SkillsSection() {
 
   const certifications = [
     {
-      name: "Introduction to AI",
-      url: "https://coursera.org/share/5a2f50cb66db77333ac74aa8eaf9e2a2"
+      name: "Google Cybersecurity",
+      url: "https://coursera.org/share/dec9561459a53702731c7015229a1f6d"
     },
     {
-      name: "AI For Everyone",
-      url: "https://coursera.org/share/e8310f78eece3f85d76ada854be1ec66"
-    },
-    {
-      name: "AI Essentials",
-      url: "https://coursera.org/share/210cb1f7c912d8d8ccef3b0b307e96e2"
-    },
-    {
-      name: "Generative AI with Large Language Models (AWS/DeepLearning.AI)",
-      url: "https://coursera.org/share/f2d25089dceac392a8c1fc6064cf9a66"
+      name: "Google IT Support",
+      url: "https://coursera.org/share/be5976b1cc171d4d0c9c607ede1c81cf"
     },
     {
       name: "AI Foundations: Prompt Engineering with ChatGPT (ASU)",
@@ -99,18 +97,6 @@ export function SkillsSection() {
     {
       name: "Python for Data Science, AI & Development (IBM)",
       url: "https://coursera.org/share/27ef814a3240640017e50fb2cec24df5"
-    },
-    {
-      name: "Introduction to Responsible AI (Google)",
-      url: "https://coursera.org/share/dbe9c6acf7405658dd5f3f439d24d5b7"
-    },
-    {
-      name: "Building AI Powered Chatbots Without Programming",
-      url: "https://coursera.org/share/858514de289ee7576efb51e04e60ab0e"
-    },
-    {
-      name: "Trustworthy AI (University of Toronto)",
-      url: "https://coursera.org/share/e26054260769b03dcf26e29ec26f3c6a"
     },
     {
       name: "AI on Microsoft Azure",
@@ -285,19 +271,22 @@ export function SkillsSection() {
                        </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4">
-                      <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
-                         <a href="#" target="_blank" rel="noopener noreferrer">
-                           <ExternalLink className="w-4 h-4 mr-2" />
-                           View Deployment
-                         </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
-                         <a href="#" target="_blank" rel="noopener noreferrer">
-                           <Github className="w-4 h-4 mr-2" />
-                           View Source Code
-                         </a>
-                      </Button>
+                    <div className="pt-4 border-t border-border/40">
+                      <h4 className="font-medium mb-3 text-sm text-muted-foreground uppercase tracking-wider">Project Links</h4>
+                      <div className="flex flex-wrap gap-4">
+                        <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
+                           <a href={scavengerHuntLinks.deployment} target="_blank" rel="noopener noreferrer">
+                             <ExternalLink className="w-4 h-4 mr-2" />
+                             View Deployment
+                           </a>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
+                           <a href={scavengerHuntLinks.sourceCode} target="_blank" rel="noopener noreferrer">
+                             <Github className="w-4 h-4 mr-2" />
+                             View Source Code
+                           </a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
