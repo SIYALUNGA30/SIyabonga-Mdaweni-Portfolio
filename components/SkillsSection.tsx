@@ -220,7 +220,7 @@ export function SkillsSection() {
              <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold mb-1 text-primary">Scavenger Hunt Game Project (6 Weeks)</h3>
+                    <h3 className="text-xl font-semibold mb-1 text-primary">Scavenger Hunt Game: Quiz Challenge</h3>
                     <p className="text-sm text-muted-foreground mb-4 italic">Co-Organizer & Developer</p>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       Together with my colleagues, I was tasked with designing and running a Scavenger Hunt Game over a six-week period. I was also an active part of the game as well. Leveraging the team’s creativity and collaboration, I developed a short quiz challenge that is divided into four timed sections, using <strong>Google Studio</strong> to put the idea into action.

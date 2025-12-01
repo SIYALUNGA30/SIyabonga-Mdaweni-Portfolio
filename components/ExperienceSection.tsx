@@ -5,7 +5,7 @@ import { Briefcase, Calendar, MapPin } from "./icons/LucideIcons";
 export function ExperienceSection() {
   const experiences = [
     {
-      title: "Projects and Training",
+      title: "Digital Associate",
       company: "Capaciti",
       location: "Braamfontein, Johannesburg",
       duration: "July 2025 - Present",

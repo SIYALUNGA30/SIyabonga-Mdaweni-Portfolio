@@ -127,7 +127,7 @@ export function HeroSection() {
               {/* Profile picture placeholder - user will upload manually */}
               <div className="w-96 h-96 bg-gradient-to-br from-primary/20 to-purple-500/30 rounded-full flex items-center justify-center overflow-hidden border-4 border-primary/20 shadow-2xl backdrop-blur-sm">
                 <img 
-                  src="https://image2url.com/images/1757771346808-a2a593b6-03f0-47b4-be9a-df5b41140b16.png" 
+                  src="https://image2url.com/images/1764575666412-7cbc0544-83f2-4143-8743-23cc08418914.png" 
                   alt="Siyabonga Mdaweni"
                   className="w-full h-full object-cover"
                   onError={(e) => {
