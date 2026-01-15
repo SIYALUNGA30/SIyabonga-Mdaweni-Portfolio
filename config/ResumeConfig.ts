@@ -1,5 +1,5 @@
 export const resumeConfig = {
-  resumeUrl: "https://capeitinitiative-my.sharepoint.com/:b:/g/personal/siyabonga_mdaweni_capaciti_org_za/Edgo4pB1WKdNn2S8AYm3Qt4BcTRf6MeDk5nT-6aezIyg7g?e=MkhEcP",
+  resumeUrl: "https://1drv.ms/b/c/12ec0c86c07230f5/IQDhIdGzZbkmQYzlVfMz9tpDASnzBC92N4IyKaQIpvqVvTA?e=DRFatX",
   fileName: "Siyabonga_Mdaweni_Resume.pdf",
   buttonText: "Download Resume"
 };
