@@ -16,6 +16,11 @@ export function HeroSection() {
     }
   };
 
+  const handleDownload = (e: React.MouseEvent) => {
+    e.preventDefault();
+    downloadResume();
+  };
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Dynamic Animated Background */}
@@ -40,8 +45,6 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-8">
             <div className="space-y-6">
-
-              
               <div>
                 <h1 className="text-4xl md:text-6xl mb-4 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-[200%_auto]">
                   Siyabonga Mdaweni
@@ -51,7 +54,7 @@ export function HeroSection() {
                   className="text-xl md:text-2xl text-muted-foreground mb-6 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-muted-foreground via-foreground to-muted-foreground bg-[200%_auto]"
                   style={{ animationDelay: '0.5s' }}
                 >
-                  IT Support | Aspiring AI/ML Engineer
+                  IT Support | Cybersecurity | Aspiring AI/ML Engineer
                 </p>
                 
                 <p 
@@ -88,7 +91,7 @@ export function HeroSection() {
                   View My Projects
                 </Button>
                 
-                <Button variant="outline" size="lg" onClick={downloadResume}>
+                <Button variant="outline" size="lg" onClick={handleDownload}>
                   <Download className="mr-2 w-4 h-4" />
                   {resumeConfig.buttonText}
                 </Button>
@@ -124,14 +127,12 @@ export function HeroSection() {
 
           <div className="flex justify-center lg:justify-end">
             <div className="relative animate-float">
-              {/* Profile picture placeholder - user will upload manually */}
               <div className="w-96 h-96 bg-gradient-to-br from-primary/20 to-purple-500/30 rounded-full flex items-center justify-center overflow-hidden border-4 border-primary/20 shadow-2xl backdrop-blur-sm">
                 <img 
                   src="https://image2url.com/images/1764575666412-7cbc0544-83f2-4143-8743-23cc08418914.png" 
                   alt="Siyabonga Mdaweni"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    // Fallback to initials if image not found
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.nextElementSibling) {

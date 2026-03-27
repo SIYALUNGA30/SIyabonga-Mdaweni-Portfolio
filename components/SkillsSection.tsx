@@ -1,18 +1,16 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/Card";
 import { Badge } from "./ui/Badge";
 import { Progress } from "./ui/Progress";
-import { Trophy, ExternalLink, Github, ChevronDown, ChevronUp } from "./icons/LucideIcons";
+import { Trophy, ExternalLink, ChevronDown, ChevronUp } from "./icons/LucideIcons";
 import { Button } from "./ui/Button";
 
 export function SkillsSection() {
   const [showAllSkills, setShowAllSkills] = useState(false);
 
-  // UPDATE THESE LINKS MANUALLY
+  // Scavenger Hunt Link
   const scavengerHuntLinks = {
-    deployment: "https://gemini-quiz-challenge-567954893740.us-west1.run.app/", 
-    sourceCode: "https://github.com/SIYALUNGA30/SIyabonga-Mdaweni-Portfolio"  
+    deployment: "https://gemini-quiz-challenge-189473728151.us-west1.run.app/"
   };
 
   const skillCategories = [
@@ -37,13 +35,13 @@ export function SkillsSection() {
       ]
     },
     {
-      title: "Development & Deployment",
+      title: "Cybersecurity",
       skills: [
-        { name: "React/Node.js", level: 60, description: "Full-stack web application development" },
-        { name: "Git/GitHub", level: 70, description: "Version control and collaboration" },
-        { name: "Figma", level: 90, description: "Rapid prototyping and dashboard creation, Wireframes" },
-        { name: "Gemini", level: 88, description: "AI-powered development and automation" },
-        { name: "AWS Services", level: 58, description: "Cloud deployment and AI services" }
+        { name: "Network Security", level: 85, description: "Setting up and managing secure network infrastructures" },
+        { name: "Security Auditing", level: 80, description: "Identifying vulnerabilities and ensuring compliance" },
+        { name: "Firewall Management", level: 82, description: "Configuring and monitoring network security barriers" },
+        { name: "Threat Detection", level: 75, description: "Monitoring systems for malicious activity and breaches" },
+        { name: "Cloud Security", level: 78, description: "Securing cloud-based environments and services" }
       ]
     },
     {
@@ -223,7 +221,7 @@ export function SkillsSection() {
                     <h3 className="text-xl font-semibold mb-1 text-primary">Scavenger Hunt Game: Quiz Challenge</h3>
                     <p className="text-sm text-muted-foreground mb-4 italic">Co-Organizer & Developer</p>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      Together with my colleagues, I was tasked with designing and running a Scavenger Hunt Game over a six-week period. I was also an active part of the game as well. Leveraging the team’s creativity and collaboration, I developed a short quiz challenge that is divided into four timed sections, using <strong>Google Studio</strong> to put the idea into action.
+                      Together with my colleagues, I was tasked with designing and running a Scavenger Hunt Game over a six-week period. Leveraging the team’s creativity and collaboration, I developed a short quiz challenge that is divided into three timed sections, using <strong>Google Studio</strong> to put the idea into action.
                     </p>
                     
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -243,10 +241,6 @@ export function SkillsSection() {
                             <li className="flex gap-2">
                               <span className="font-bold text-chart-4">•</span>
                               <span><strong className="text-foreground">Emoji Decoding:</strong> Players interpret sequences of emojis to uncover hidden meanings or phrases.</span>
-                            </li>
-                            <li className="flex gap-2">
-                              <span className="font-bold text-chart-4">•</span>
-                              <span><strong className="text-foreground">Pixel Puzzle:</strong> A challenge where participants solve puzzles based on pixelated images.</span>
                             </li>
                           </ul>
                        </div>
@@ -278,12 +272,6 @@ export function SkillsSection() {
                            <a href={scavengerHuntLinks.deployment} target="_blank" rel="noopener noreferrer">
                              <ExternalLink className="w-4 h-4 mr-2" />
                              View Deployment
-                           </a>
-                        </Button>
-                        <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
-                           <a href={scavengerHuntLinks.sourceCode} target="_blank" rel="noopener noreferrer">
-                             <Github className="w-4 h-4 mr-2" />
-                             View Source Code
                            </a>
                         </Button>
                       </div>
@@ -333,11 +321,11 @@ export function SkillsSection() {
                 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span role="img" aria-label="Web Development icon">📱</span>
+                    <span role="img" aria-label="Cybersecurity icon">🛡️</span>
                   </div>
-                  <h4 className="mb-2 font-medium">Web Development</h4>
+                  <h4 className="mb-2 font-medium">Cybersecurity</h4>
                   <p className="text-sm text-muted-foreground">
-                    Creating responsive, user-friendly websites and applications with a focus on functionality, scalability, and modern design.
+                    Protecting systems, networks, and data from digital attacks through proactive monitoring, vulnerability assessment, and security implementation.
                   </p>
                 </div>
               </div>

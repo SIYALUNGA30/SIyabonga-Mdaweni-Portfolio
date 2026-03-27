@@ -21,7 +21,7 @@ const overviewItems = [
   {
     icon: ListChecks,
     title: "Skills",
-    description: "A diverse skill set covering AI, front-end development, IT support fundamentals, and crucial business analysis.",
+    description: "A diverse skill set covering AI, Cybersecurity, IT support fundamentals, and crucial business analysis.",
     link: "#skills",
     linkText: "See My Skills"
   },
