@@ -5,23 +5,6 @@ import { Briefcase, Calendar, MapPin } from "./icons/LucideIcons";
 export function ExperienceSection() {
   const experiences = [
     {
-      title: "Digital Associate",
-      company: "Capaciti",
-      location: "Braamfontein, Johannesburg",
-      duration: "July 2025 - Present",
-      type: "Bootcamp & Certification",
-      description: "Engaged in comprehensive training covering AI/ML Engineering and IT Support fundamentals, focusing on practical application and collaborative problem-solving.",
-      achievements: [
-        "AI/ML Engineering Bootcamp (2 months): Built chatbots and applied AI solutions to simplify tasks.",
-        "Collaborated on group projects to design and implement systems.",
-        "Google IT Support Professional Certificate: Gained hands-on experience in troubleshooting, IT infrastructure, and ticketing systems.",
-        "Developed skills in Bits and Bytes, network fundamentals, and customer support.",
-        "Group Projects: Worked with teams to design, implement, and troubleshoot systems.",
-        "Applied problem-solving skills to resolve daily technical challenges."
-      ],
-      technologies: ["Python", "OpenAI API", "IT Support", "Networking", "Troubleshooting", "System Design", "Customer Support"]
-    },
-    {
       title: "Indexer",
       company: "Department of Home Affairs",
       location: "Silverton, Pretoria",

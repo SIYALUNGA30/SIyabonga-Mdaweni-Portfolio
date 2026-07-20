@@ -8,11 +8,6 @@ import { Button } from "./ui/Button";
 export function SkillsSection() {
   const [showAllSkills, setShowAllSkills] = useState(false);
 
-  // Scavenger Hunt Link
-  const scavengerHuntLinks = {
-    deployment: "https://gemini-quiz-challenge-189473728151.us-west1.run.app/"
-  };
-
   const skillCategories = [
     {
       title: "AI & Generative Technologies",
@@ -206,82 +201,7 @@ export function SkillsSection() {
           </Card>
         </div>
 
-        {/* Achievements Section */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <Card className="border-l-4 border-l-chart-4 shadow-lg">
-             <CardHeader>
-               <CardTitle className="flex items-center gap-2 text-2xl">
-                 <Trophy className="w-6 h-6 text-chart-4" />
-                 Key Achievements
-               </CardTitle>
-             </CardHeader>
-             <CardContent>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-1 text-primary">Scavenger Hunt Game: Quiz Challenge</h3>
-                    <p className="text-sm text-muted-foreground mb-4 italic">Co-Organizer & Developer</p>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      Together with my colleagues, I was tasked with designing and running a Scavenger Hunt Game over a six-week period. Leveraging the team’s creativity and collaboration, I developed a short quiz challenge that is divided into three timed sections, using <strong>Google Studio</strong> to put the idea into action.
-                    </p>
-                    
-                    <div className="grid md:grid-cols-2 gap-6 mb-6">
-                       <div className="bg-secondary/20 p-5 rounded-lg border border-border/50">
-                          <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
-                            Game Structure
-                          </h4>
-                          <ul className="space-y-3 text-sm text-muted-foreground">
-                            <li className="flex gap-2">
-                              <span className="font-bold text-chart-4">•</span>
-                              <span><strong className="text-foreground">Flag Guessing:</strong> Participants identify different country flags under time pressure.</span>
-                            </li>
-                            <li className="flex gap-2">
-                              <span className="font-bold text-chart-4">•</span>
-                              <span><strong className="text-foreground">IT Riddles:</strong> A set of technology-related riddles to test problem-solving and IT knowledge.</span>
-                            </li>
-                            <li className="flex gap-2">
-                              <span className="font-bold text-chart-4">•</span>
-                              <span><strong className="text-foreground">Emoji Decoding:</strong> Players interpret sequences of emojis to uncover hidden meanings or phrases.</span>
-                            </li>
-                          </ul>
-                       </div>
 
-                       <div className="bg-secondary/20 p-5 rounded-lg border border-border/50">
-                          <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
-                             Objectives
-                          </h4>
-                          <ul className="space-y-3 text-sm text-muted-foreground">
-                            {[
-                              "Keep participants entertained and engaged throughout the activity.",
-                              "Encourage teamwork by grouping individuals who may not know each other.",
-                              "Promote problem-solving and creative thinking in a fun environment.",
-                              "Motivate participants to work towards winning a prize."
-                            ].map((obj, i) => (
-                              <li key={i} className="flex gap-2">
-                                <span className="w-1.5 h-1.5 bg-chart-4 rounded-full mt-2 flex-shrink-0" />
-                                <span>{obj}</span>
-                              </li>
-                            ))}
-                          </ul>
-                       </div>
-                    </div>
-
-                    <div className="pt-4 border-t border-border/40">
-                      <h4 className="font-medium mb-3 text-sm text-muted-foreground uppercase tracking-wider">Project Links</h4>
-                      <div className="flex flex-wrap gap-4">
-                        <Button variant="outline" size="sm" asChild className="hover:border-primary/50 hover:bg-primary/5">
-                           <a href={scavengerHuntLinks.deployment} target="_blank" rel="noopener noreferrer">
-                             <ExternalLink className="w-4 h-4 mr-2" />
-                             View Deployment
-                           </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-             </CardContent>
-          </Card>
-        </div>
-        
         <div>
           <Card>
             <CardHeader>

@@ -4,10 +4,22 @@ import { Badge } from "./ui/Badge";
 import { ExternalLink, Github, Calendar, ChevronDown, ChevronUp } from "./icons/LucideIcons";
 import { Button } from "./ui/Button";
 
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  features: string[];
+  deliverables: string[];
+  imageUrl: string;
+  demoUrl: string;
+  codeUrl: string;
+  videoUrl?: string;
+}
+
 export function ProjectsSection() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   
-  const projects = [
+  const projects: Project[] = [
     {
       title: "SmartWater SA ",
       description: "The AI-Driven Precision Irrigation System is designed to address global water scarcity and agricultural inefficiencies by optimizing irrigation scheduling. Agriculture consumes 70% of global freshwater, with up to 50% wasted due to over-irrigation or poor timing. This solution leverages predictive analytics, IoT soil sensors, and weather APIs to determine optimal irrigation times and amounts.",
@@ -21,7 +33,6 @@ export function ProjectsSection() {
       ],
       deliverables: ["Interactive prototype", "Demo video", "Ethical analysis document"],
       imageUrl: "https://i.imgur.com/GXB9Akf.png",
-      videoUrl: "https://capeitinitiative-my.sharepoint.com/:v:/g/personal/nompilo_mchunu_capaciti_org_za/EflDHNdxG3pFpXbcGy5HNsUBF1m3waGavsOKiOYIAvEHUA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=l0YgU0",
       demoUrl: "https://start-pastel-91876766.figma.site",
       codeUrl: "https://github.com/Nompil/Smart-Irrigation-Scheduler" 
     },
@@ -38,7 +49,6 @@ export function ProjectsSection() {
       ],
       deliverables: ["Functional generator tool", "Prompt library", "Technical documentation"],
       imageUrl: "https://image2url.com/images/1757509397687-e0ae63ca-22d1-4f8a-8b81-8db4de9df35b.png",
-      videoUrl: "https://capeitinitiative-my.sharepoint.com/:v:/g/personal/siyabonga_mdaweni_capaciti_org_za/EcM5cgiDcABJka6w3p_A-rkBga_lcnFLdvR603YbTSe-hg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=DOkbfA",
       demoUrl: "https://apron-swarm-24108016.figma.site",
       codeUrl: "https://github.com/SIYALUNGA30/project-2"
     },
@@ -56,7 +66,6 @@ export function ProjectsSection() {
       ],
       deliverables: ["Deployed application", "User guide", "Technical report"],
       imageUrl: "https://i.imgur.com/Jgn0VfE.png",
-      videoUrl: "https://capeitinitiative-my.sharepoint.com/:v:/g/personal/siyabonga_mdaweni_capaciti_org_za/EeQ3jqUjgXFJiJqbBl0u5HUB-GbVeOjoGqGw8Fb7RzaRJQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=SOidsO",
       demoUrl: "https://masikhule-solutions.github.io/ai-resume-builder/",
       codeUrl: "https://github.com/Mphefemulo/Masikhule.git"
     },
@@ -74,7 +83,6 @@ export function ProjectsSection() {
       ],
       deliverables: ["GitHub repository", "Deployed application", "Accuracy report"],
       imageUrl: "https://image2url.com/images/1757509568863-3aa1f716-66cd-43b9-8a3e-a1b1f4df6f50.png",
-      videoUrl: "https://capeitinitiative-my.sharepoint.com/:v:/g/personal/nompilo_mchunu_capaciti_org_za/ER6MRuRR339IpXuNfkpZ6SsBhCfdUm9HWVTCEbyP5-8isQ?e=LSSZf8",
       demoUrl: "https://skelletor147.github.io/sentimental-analysis/",
       codeUrl: "https://github.com/skelletor147/sentimental-analysis-dashboard"
     },
@@ -109,7 +117,6 @@ export function ProjectsSection() {
       ],
       deliverables: ["Working prototype", "Architecture diagram", "Demonstration video"],
       imageUrl: "https://i.imgur.com/ZFPCLmH.png",
-      videoUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_6",
       demoUrl: "https://ai-study-buddy-701021958461.us-west1.run.app/",
       codeUrl: "https://github.com/Nompil/ai-study-buddy"
     }
@@ -150,20 +157,18 @@ export function ProjectsSection() {
               </CardHeader>
 
               <CardContent className="flex-1 flex flex-col gap-4">
-                {project.title === "Bias Audit Report" ? (
+                {(!project.videoUrl || project.title === "Bias Audit Report") ? (
                   <div className="w-full h-32 bg-muted/50 rounded-lg border-2 border-dashed border-muted-foreground/25 relative overflow-hidden">
                     <img 
                       src={project.imageUrl} 
-                      alt={`${project.title} Report`} 
+                      alt={`${project.title} Preview`} 
                       className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
                 ) : (
                   <div className="w-full h-32 bg-muted/50 rounded-lg border-2 border-dashed border-muted-foreground/25 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform"
                        onClick={() => {
-                         if (project.videoUrl) {
-                           window.open(project.videoUrl, '_blank');
-                         }
+                         window.open(project.videoUrl, '_blank');
                        }}>
                     <img 
                       src={project.imageUrl} 
