@@ -88,7 +88,7 @@ export function ProjectsSection() {
     },
     {
       title: "Bias Audit Report",
-      description: "he bias audit shows AI hiring models in South Africa may worsen inequality, predicting 16% lower employment for women and 25% for non-Whites (p<0.05). Ethical deployment requires fair data curation, reweighting, and transparent reporting, even at slight accuracy costs. The report calls for compliance with the Employment Equity Act and BEE goals, advocating diverse teams, regular audits, and skills-based features.",
+      description: "The bias audit shows AI hiring models in South Africa may worsen inequality, predicting 16% lower employment for women and 25% for non-Whites (p<0.05). Ethical deployment requires fair data curation, reweighting, and transparent reporting, even at slight accuracy costs. The report calls for compliance with the Employment Equity Act and BEE goals, advocating diverse teams, regular audits, and skills-based features.",
       technologies: ["Python", "IBM AI Fairness 360", "Jupyter", "Statistical Analysis"],
       features: [
         "Bias Findings",
