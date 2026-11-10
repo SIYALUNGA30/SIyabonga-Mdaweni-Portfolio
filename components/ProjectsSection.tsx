@@ -328,7 +328,7 @@ export function ProjectsSection() {
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
             Technical Portfolio
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 tracking-tight mb-2.5">
             Course Work Projects
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
@@ -379,7 +379,7 @@ export function ProjectsSection() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2.5 flex-wrap">
-                    <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
+                    <h3 className="text-base md:text-lg font-bold text-white tracking-tight">
                       Cybersecurity Course Work
                     </h3>
                     <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-teal-400/20 text-teal-300 border border-teal-400/30">
@@ -433,11 +433,11 @@ export function ProjectsSection() {
 
             {/* Maximized Content */}
             {isCybersecurityExpanded && (
-              <div className="p-5 md:p-8 space-y-10">
+              <div className="p-5 md:p-8 space-y-10 animate-slideIn">
                 {cybersecurityProjects.map((project, projectIndex) => (
                   <div 
                     key={project.id}
-                    className="border border-slate-200 rounded-xl p-5 md:p-7 bg-white shadow-xs space-y-6"
+                    className="border border-slate-200/90 rounded-xl p-5 md:p-7 bg-white shadow-xs space-y-6 card-hover-lift hover:border-teal-400 group/proj transition-all duration-300"
                   >
                     {/* Project Top Header */}
                     <div className="flex flex-wrap items-start justify-between gap-4 pb-4 border-b border-slate-100">
@@ -462,7 +462,7 @@ export function ProjectsSection() {
                           <span className="text-slate-400">·</span>
                           <span className="text-slate-500">{project.year}</span>
                         </div>
-                        <h4 className="text-xl md:text-2xl font-bold text-navy-900 leading-tight">
+                        <h4 className="text-base md:text-lg font-bold text-navy-900 leading-snug group-hover/proj:text-teal-900 transition-colors">
                           {project.title}
                         </h4>
                       </div>
@@ -470,9 +470,9 @@ export function ProjectsSection() {
                       {/* Demo Link / Code Action Buttons */}
                       <div className="flex flex-wrap items-center gap-2">
                         {project.demoUrl && (
-                          <Button asChild size="sm" className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold shadow-xs">
+                          <Button asChild size="sm" className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold shadow-xs hover:shadow-sm transition-all duration-200 hover:-translate-y-0.5 group/btn">
                             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
+                              <ExternalLink className="w-3.5 h-3.5 mr-1.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                               View Live Demo
                             </a>
                           </Button>
@@ -700,7 +700,7 @@ export function ProjectsSection() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2.5 flex-wrap">
-                    <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
+                    <h3 className="text-base md:text-lg font-bold text-white tracking-tight">
                       Artificial Intelligence (AI/ML) Course Work
                     </h3>
                     <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-white/10 text-slate-200 border border-white/20">
@@ -754,10 +754,10 @@ export function ProjectsSection() {
 
             {/* Maximized Content */}
             {isAiExpanded && (
-              <div className="p-5 md:p-8">
+              <div className="p-5 md:p-8 animate-slideIn">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {displayedAiProjects.map((project, index) => (
-                    <Card key={index} className="h-full flex flex-col bg-white border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+                    <Card key={index} className="h-full flex flex-col bg-white border border-slate-200/90 rounded-xl card-hover-lift hover:border-teal-400 overflow-hidden group/aiproj">
                       <CardHeader className="p-5 pb-3">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
@@ -771,7 +771,7 @@ export function ProjectsSection() {
                                 2024
                               </span>
                             </div>
-                            <CardTitle className="text-lg font-bold text-navy-900 leading-snug">{project.title}</CardTitle>
+                            <CardTitle className="text-sm md:text-base font-bold text-navy-900 leading-snug">{project.title}</CardTitle>
                           </div>
                         </div>
                       </CardHeader>

@@ -52,5 +52,9 @@ export function Router() {
     }
   };
 
-  return renderPage();
+  return (
+    <div key={currentPage} className="animate-fadeIn w-full">
+      {renderPage()}
+    </div>
+  );
 }

@@ -70,21 +70,21 @@ export function ExperienceSection() {
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
             Work &amp; Practical Training
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 tracking-tight mb-2.5">
             Practical Experience &amp; Labs
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
             Hands-on cybersecurity laboratory practice, network analysis, and professional data indexing with strict adherence to confidentiality and the CIA triad.
           </p>
         </div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden">
+            <Card key={index} className="bg-white border border-slate-200/90 rounded-xl shadow-xs overflow-hidden card-hover-lift hover:border-teal-400 transition-all duration-300">
               <CardHeader className="p-6 pb-4 border-b border-slate-100">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="space-y-1">
@@ -92,7 +92,7 @@ export function ExperienceSection() {
                       <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700 flex-shrink-0">
                         {index === 0 ? <Shield className="w-4 h-4" /> : <Briefcase className="w-4 h-4" />}
                       </div>
-                      <CardTitle className="text-lg md:text-xl font-bold text-navy-900">
+                      <CardTitle className="text-base md:text-lg font-bold text-navy-900">
                         {exp.title}
                       </CardTitle>
                     </div>
@@ -142,7 +142,7 @@ export function ExperienceSection() {
                     </h5>
                     <div className="flex flex-wrap gap-1.5">
                       {exp.tools.map((tool, idx) => (
-                        <span key={idx} className="text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">
+                        <span key={idx} className="text-xs font-semibold bg-white text-navy-900 border border-slate-200 px-2.5 py-1 rounded shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-teal-400 hover:text-teal-800 cursor-default">
                           {tool}
                         </span>
                       ))}

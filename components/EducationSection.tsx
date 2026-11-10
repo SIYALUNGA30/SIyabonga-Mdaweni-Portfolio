@@ -26,21 +26,21 @@ export function EducationSection() {
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
             Academic Background
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 tracking-tight mb-2.5">
             Education
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
             Formal tertiary qualification bridging information technology infrastructure with organizational business needs.
           </p>
         </div>
 
         <div className="space-y-6">
           {education.map((edu, index) => (
-            <Card key={index} className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden">
+            <Card key={index} className="bg-white border border-slate-200/90 rounded-xl shadow-xs overflow-hidden card-hover-lift hover:border-teal-400 transition-all duration-300">
               <CardHeader className="p-6 pb-4 border-b border-slate-100">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="space-y-1">
@@ -48,7 +48,7 @@ export function EducationSection() {
                       <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700 flex-shrink-0">
                         <GraduationCap className="w-4 h-4" />
                       </div>
-                      <CardTitle className="text-lg md:text-xl font-bold text-navy-900">
+                      <CardTitle className="text-base md:text-lg font-bold text-navy-900">
                         {edu.degree}
                       </CardTitle>
                     </div>
@@ -82,7 +82,7 @@ export function EducationSection() {
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-2">
                     {edu.highlights.map((course, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 p-2.5 rounded-md bg-slate-50 border border-slate-100 font-medium">
+                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 p-2.5 rounded-md bg-slate-50 border border-slate-100 font-medium transition-all duration-200 hover:bg-teal-50/60 hover:border-teal-200 hover:text-navy-900 hover:translate-x-1">
                         <CheckCircle className="w-3.5 h-3.5 text-teal-600 flex-shrink-0" />
                         <span>{course}</span>
                       </div>

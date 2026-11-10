@@ -34,14 +34,14 @@ export function AboutSection() {
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
             Professional Profile
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 tracking-tight mb-2.5">
             About Me
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
             Cybersecurity Analyst and IT Support Specialist dedicated to protecting networks, diagnosing systems issues, and maintaining organizational data integrity.
           </p>
         </div>
@@ -51,8 +51,8 @@ export function AboutSection() {
           {/* Left: Professional Narrative */}
           <div className="md:col-span-7 space-y-6">
             <div className="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-xs space-y-4">
-              <h3 className="text-lg md:text-xl font-bold text-navy-900 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-teal-600" />
+              <h3 className="text-base md:text-lg font-bold text-navy-900 flex items-center gap-2">
+                <Shield className="w-4 h-4 text-teal-600" />
                 Cybersecurity &amp; IT Support Focus
               </h3>
               <p className="text-sm md:text-base text-slate-700 leading-relaxed">

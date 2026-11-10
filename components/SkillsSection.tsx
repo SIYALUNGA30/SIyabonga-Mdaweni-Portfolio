@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/Card";
 import { Progress } from "./ui/Progress";
 import { ChevronDown, ChevronUp, ExternalLink, Shield, Terminal, Sparkles, FileText, CheckCircle } from "./icons/LucideIcons";
@@ -6,6 +6,14 @@ import { Button } from "./ui/Button";
 
 export function SkillsSection() {
   const [showAllSkills, setShowAllSkills] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Top skills MUST be Cybersecurity and IT Support per user instruction
   const skillCategories = [
@@ -109,14 +117,14 @@ export function SkillsSection() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header - Focused on Cybersecurity and IT Support */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
             Technical Competencies
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 tracking-tight mb-2.5">
             Cybersecurity &amp; IT Support Skills
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
             Practical competencies in vulnerability scanning, packet analysis, penetration testing tools, Cisco network simulation, and hardware troubleshooting.
           </p>
         </div>
@@ -124,9 +132,9 @@ export function SkillsSection() {
         {/* Core Skill Categories Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           {displayedSkills.map((category, index) => (
-            <Card key={index} className="bg-white border border-slate-200 rounded-xl shadow-2xs">
-              <CardHeader className="p-5 pb-3 border-b border-slate-100 bg-slate-50/60">
-                <CardTitle className="text-base font-bold text-navy-900 flex items-center gap-2">
+            <Card key={index} className="bg-white border border-slate-200/90 rounded-xl shadow-2xs card-hover-lift hover:border-teal-400">
+              <CardHeader className="p-4 md:p-5 pb-3 border-b border-slate-100 bg-slate-50/60">
+                <CardTitle className="text-sm md:text-base font-bold text-navy-900 flex items-center gap-2">
                   {index === 0 && <Shield className="w-4 h-4 text-teal-600" />}
                   {index === 1 && <Terminal className="w-4 h-4 text-teal-600" />}
                   {index === 2 && <FileText className="w-4 h-4 text-teal-600" />}
@@ -139,9 +147,18 @@ export function SkillsSection() {
                   <div key={skillIndex} className="space-y-1.5">
                     <div className="flex justify-between items-center text-xs">
                       <span className="font-semibold text-navy-900">{skill.name}</span>
-                      {skill.level && <span className="text-slate-400 font-mono text-[11px]">{skill.level}%</span>}
+                      {skill.level && (
+                        <span className="text-teal-700 font-mono text-[11px] font-semibold">
+                          {isAnimated ? `${skill.level}%` : '0%'}
+                        </span>
+                      )}
                     </div>
-                    {skill.level && <Progress value={skill.level} className="h-1.5 bg-slate-100" />}
+                    {skill.level && (
+                      <Progress 
+                        value={isAnimated ? skill.level : 0} 
+                        className="h-1.5 bg-slate-100 transition-all duration-700 ease-out" 
+                      />
+                    )}
                     <p className="text-[11px] text-slate-500 leading-normal">{skill.description}</p>
                   </div>
                 ))}

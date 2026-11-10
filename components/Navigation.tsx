@@ -95,7 +95,7 @@ export function Navigation() {
 
           {/* Mobile Navigation Menu */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-md md:hidden">
+            <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-md md:hidden animate-slideIn">
               <div className="flex flex-col p-4 space-y-1">
                 {navLinks.map(link => (
                     <button 

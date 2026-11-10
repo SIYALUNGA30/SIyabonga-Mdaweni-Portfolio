@@ -25,28 +25,28 @@ export function ReferencesSection() {
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
             Professional Endorsements
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-900 tracking-tight mb-2.5">
             References
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
             Supervisory and collaborative references who can speak to my work ethic, reliability, and technical aptitude.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {references.map((ref, index) => (
-            <Card key={index} className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden">
-              <CardHeader className="p-6 pb-3 border-b border-slate-100">
+            <Card key={index} className="bg-white border border-slate-200/90 rounded-xl shadow-xs overflow-hidden card-hover-lift hover:border-teal-400 transition-all duration-300">
+              <CardHeader className="p-5 pb-3 border-b border-slate-100">
                 <div className="flex items-start gap-3.5">
                   <div className="w-10 h-10 rounded-lg bg-teal-50 border border-teal-200/60 flex items-center justify-center text-teal-700 flex-shrink-0">
                     <Users className="w-5 h-5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <CardTitle className="text-base font-bold text-navy-900 leading-snug">{ref.name}</CardTitle>
+                    <CardTitle className="text-sm md:text-base font-bold text-navy-900 leading-snug">{ref.name}</CardTitle>
                     <p className="text-xs text-slate-500 mt-0.5">{ref.title}</p>
                   </div>
                   <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded">
