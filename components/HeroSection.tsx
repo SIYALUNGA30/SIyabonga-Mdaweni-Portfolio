@@ -26,7 +26,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section id="hero" className="min-h-[88vh] flex items-center justify-center relative bg-gradient-to-b from-slate-50 to-white py-14 md:py-20 border-b border-slate-200">
+    <section id="hero" className="relative bg-gradient-to-b from-slate-50 to-white pt-3 pb-10 md:pt-5 md:pb-14 border-b border-slate-200">
       {/* Subtle Technical Pattern */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-30 bg-[radial-gradient(#94A3B8_1px,transparent_1px)] [background-size:24px_24px]"
@@ -34,7 +34,7 @@ export function HeroSection() {
       />
       
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Focused on Cybersecurity & IT Support */}
           <div className="lg:col-span-7 space-y-6">
