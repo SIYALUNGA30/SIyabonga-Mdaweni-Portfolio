@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Navigation } from "./Navigation";
 import { Toaster } from "./Toaster";
 
@@ -7,60 +7,75 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const [currentDateTime, setCurrentDateTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentDateTime(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-  
   const navigateToPage = (path: string) => {
     window.location.hash = path;
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-navy-900">
       <Navigation />
-      <main className="animate-fadeIn pt-16 flex-grow">
+      <main className="pt-16 flex-grow">
         {children}
       </main>
       
-      <footer className="bg-primary/10 py-6 border-t border-border">
-        <div className="w-full max-w-6xl mx-auto px-2 sm:px-4">
+      <footer className="bg-navy-950 text-slate-300 py-10 border-t border-navy-900 mt-auto">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="animate-slideIn text-center md:text-left">
-              <p>&copy; {new Date().getFullYear()} Siyabonga Mdaweni. All rights reserved.</p>
-              <p className="text-sm text-muted-foreground">
-                IT Support | Aspiring AI/ML Engineer • Available for Opportunities
+            <div className="text-center md:text-left space-y-1">
+              <p className="text-sm font-semibold text-white">
+                Siyabonga Mdaweni · Portfolio
               </p>
-              <div className="mt-4">
-                <p className="font-mono text-sm">{currentDateTime.toLocaleDateString()}</p>
-                <p className="font-mono text-xs text-muted-foreground">{currentDateTime.toLocaleTimeString()}</p>
-              </div>
+              <p className="text-xs text-slate-400">
+                Cybersecurity &amp; IT Support Specialist · AI/ML Practitioner
+              </p>
+              <p className="text-xs text-slate-500 pt-1">
+                &copy; {new Date().getFullYear()} Siyabonga Mdaweni. All rights reserved.
+              </p>
             </div>
-            <div className="animate-slideIn flex items-center">
-              <div className="flex gap-4 text-sm">
-                <button 
-                  onClick={() => navigateToPage('education')}
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Education
-                </button>
-                <button 
-                  onClick={() => navigateToPage('experience')}
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  Experience
-                </button>
-                <button 
-                  onClick={() => navigateToPage('references')}
-                  className="text-muted-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  References
-                </button>
-              </div>
+            
+            <div className="flex items-center gap-6 text-xs text-slate-400">
+              <button 
+                onClick={() => navigateToPage('about')}
+                className="hover:text-teal-400 hover:underline transition-colors"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => navigateToPage('projects')}
+                className="hover:text-teal-400 hover:underline transition-colors"
+              >
+                Projects
+              </button>
+              <button 
+                onClick={() => navigateToPage('skills')}
+                className="hover:text-teal-400 hover:underline transition-colors"
+              >
+                Skills
+              </button>
+              <button 
+                onClick={() => navigateToPage('education')}
+                className="hover:text-teal-400 hover:underline transition-colors"
+              >
+                Education
+              </button>
+              <button 
+                onClick={() => navigateToPage('experience')}
+                className="hover:text-teal-400 hover:underline transition-colors"
+              >
+                Experience
+              </button>
+              <button 
+                onClick={() => navigateToPage('references')}
+                className="hover:text-teal-400 hover:underline transition-colors"
+              >
+                References
+              </button>
+              <button 
+                onClick={() => navigateToPage('contact')}
+                className="hover:text-teal-400 hover:underline transition-colors text-teal-400 font-medium"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>

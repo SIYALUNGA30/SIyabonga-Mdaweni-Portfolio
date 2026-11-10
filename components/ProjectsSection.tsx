@@ -14,7 +14,6 @@ import {
   FileText,
   AlertCircle,
   CheckCircle,
-  Users,
   Building2
 } from "./icons/LucideIcons";
 import { Button } from "./ui/Button";
@@ -63,9 +62,9 @@ interface AIProject {
 }
 
 export function ProjectsSection() {
-  // Minimize/Maximize state for each career section
-  const [isCybersecurityExpanded, setIsCybersecurityExpanded] = useState(true);
-  const [isAiExpanded, setIsAiExpanded] = useState(true);
+  // Minimize/Maximize state for each career section - always minimized by default per user request
+  const [isCybersecurityExpanded, setIsCybersecurityExpanded] = useState(false);
+  const [isAiExpanded, setIsAiExpanded] = useState(false);
   
   // AI grid inner pagination
   const [showAllAiProjects, setShowAllAiProjects] = useState(true);
@@ -81,10 +80,10 @@ export function ProjectsSection() {
       role: "Junior Cybersecurity Analyst (training project)",
       badgeType: "Vulnerability & Risk Assessment",
       year: "2025",
-      scope: "Fictional company with 50 employees, office network, customer database, corporate website, email system, and Wi-Fi network.",
+      scope: "Fictional enterprise with 50 employees, office network, customer database, corporate website, email system, and Wi-Fi network.",
       overview: "I completed a practical security assessment for ABC Financial Services, a fictional company with 50 employees, an office network, a customer database, a website, an email system and a Wi-Fi network. The manager was concerned about cyber threats, so my task was to assess the company’s security risks and overall security posture and recommend improvements.",
       tools: ["Nmap", "Zenmap", "Windows Command Prompt"],
-      frameworks: ["POPIA", "ISO/IEC 27001", "NIST Cybersecurity Framework (CSF)", "CIS Controls"],
+      frameworks: ["POPIA", "ISO/IEC 27001", "NIST Cybersecurity Framework", "CIS Controls"],
       keyHighlights: [
         { label: "Target Scope", value: "50 Employees, LAN, DB, Web, Email & Wi-Fi" },
         { label: "Open Ports Found", value: "Ports 135, 139, 445 (SMB) & 3306 (MySQL)" },
@@ -321,46 +320,42 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-12">
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
-        {/* Main Header */}
-        <div className="text-center mb-8">
-          <Badge variant="outline" className="mb-3 text-xs tracking-wider uppercase border-primary/40 text-primary">
-            Course Work Portfolio
-          </Badge>
-          <h2 className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-chart-4 to-chart-5 bg-clip-text text-transparent font-bold">
+    <section id="projects" className="py-16 md:py-20 bg-slate-50/60 border-b border-slate-200">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Section Header */}
+        <div className="text-center mb-10">
+          <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 block mb-2">
+            Technical Portfolio
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 tracking-tight mb-3">
             Course Work Projects
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Practical, career-focused coursework projects separated by domain. Explore hands-on security assessments, 
-            IT service desk automation, vulnerability scanning, and full-lifecycle AI/ML solutions.
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Practical coursework and technical assessments separated by discipline. Explore verified security vulnerability assessments, service desk automation, and full-lifecycle AI/ML applications.
           </p>
 
           {/* Quick Controls Bar */}
           <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
-            <Button
-              variant="outline"
-              size="sm"
+            <button
               onClick={() => toggleAll(true)}
-              className="text-xs hover:border-primary/50"
+              className="text-xs font-medium px-3 py-1.5 rounded-md bg-white border border-slate-200 text-navy-900 hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-2xs"
             >
               Expand All Sections
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
+            </button>
+            <button
               onClick={() => toggleAll(false)}
-              className="text-xs hover:border-primary/50"
+              className="text-xs font-medium px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-2xs"
             >
               Minimize All Sections
-            </Button>
-            <div className="hidden sm:flex items-center gap-2 pl-2 text-xs text-muted-foreground">
-              <span>Quick Jump:</span>
-              <a href="#cybersecurity-projects" className="underline hover:text-emerald-500 transition-colors font-medium">
+            </button>
+            <div className="hidden sm:flex items-center gap-2 pl-3 text-xs text-slate-500">
+              <span>Jump to:</span>
+              <a href="#cybersecurity-projects" className="font-semibold text-teal-700 hover:text-navy-900 hover:underline transition-colors">
                 Cybersecurity (2)
               </a>
-              <span>•</span>
-              <a href="#ai-projects" className="underline hover:text-primary transition-colors font-medium">
+              <span>·</span>
+              <a href="#ai-projects" className="font-semibold text-navy-900 hover:text-teal-700 hover:underline transition-colors">
                 AI / ML (6)
               </a>
             </div>
@@ -370,37 +365,37 @@ export function ProjectsSection() {
         {/* ============================================================== */}
         {/* SECTION 1: CYBERSECURITY COURSE WORK PROJECTS (TOP)           */}
         {/* ============================================================== */}
-        <div id="cybersecurity-projects" className="mb-14 scroll-mt-20">
-          <Card className="border-2 border-emerald-500/30 dark:border-emerald-500/20 shadow-lg overflow-hidden transition-all duration-300">
-            {/* Collapsible Section Header */}
+        <div id="cybersecurity-projects" className="mb-12 scroll-mt-20">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            
+            {/* Section Header */}
             <div 
               onClick={() => setIsCybersecurityExpanded(!isCybersecurityExpanded)}
-              className="p-5 md:p-6 bg-gradient-to-r from-emerald-950/20 via-background to-teal-950/20 border-b border-border/60 cursor-pointer flex items-center justify-between gap-4 select-none hover:bg-muted/40 transition-colors"
+              className="p-5 md:p-6 bg-navy-900 border-b border-navy-800 cursor-pointer flex items-center justify-between gap-4 select-none hover:bg-navy-800/90 transition-colors"
             >
-              <div className="flex items-center gap-3 md:gap-4 flex-wrap">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-500">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="w-10 h-10 md:w-11 md:h-11 rounded-lg bg-teal-500/10 border border-teal-400/30 flex items-center justify-center text-teal-400 flex-shrink-0">
                   <Shield className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
                       Cybersecurity Course Work
                     </h3>
-                    <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-teal-400/20 text-teal-300 border border-teal-400/30">
                       2 Projects
-                    </Badge>
+                    </span>
                   </div>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-0.5">
-                    Security risk assessments, vulnerability scanning, IT service desk automation & compliance frameworks
+                  <p className="text-xs md:text-sm text-slate-300 mt-0.5">
+                    Security assessments, vulnerability scanning, service desk automation &amp; compliance frameworks
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 flex-shrink-0">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="hidden sm:flex items-center gap-1.5 text-xs border-emerald-500/30 hover:bg-emerald-500/10"
+                <button
+                  type="button"
+                  className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsCybersecurityExpanded(!isCybersecurityExpanded);
@@ -408,64 +403,66 @@ export function ProjectsSection() {
                 >
                   {isCybersecurityExpanded ? (
                     <>
-                      <ChevronUp className="w-4 h-4" />
-                      Minimize Section
+                      <ChevronUp className="w-3.5 h-3.5" />
+                      Minimize
                     </>
                   ) : (
                     <>
-                      <ChevronDown className="w-4 h-4" />
-                      Maximize Section
+                      <ChevronDown className="w-3.5 h-3.5" />
+                      Maximize
                     </>
                   )}
-                </Button>
-                <div className="p-2 rounded-lg bg-secondary/60 sm:hidden">
+                </button>
+                <div className="p-1.5 rounded-md text-white sm:hidden">
                   {isCybersecurityExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </div>
             </div>
 
-            {/* Minimized State Bar */}
+            {/* Minimized State Notice */}
             {!isCybersecurityExpanded && (
               <div 
                 onClick={() => setIsCybersecurityExpanded(true)}
-                className="p-4 bg-muted/20 text-center cursor-pointer hover:bg-muted/40 transition-colors text-sm text-muted-foreground flex items-center justify-center gap-2"
+                className="p-4 bg-slate-50 text-center cursor-pointer hover:bg-slate-100 transition-colors text-xs md:text-sm text-slate-600 flex items-center justify-center gap-2"
               >
-                <Shield className="w-4 h-4 text-emerald-500" />
-                <span>Section minimized: <strong>2 Cybersecurity Coursework Projects</strong> (ABC Financial Assessment & AI Service Desk Agent)</span>
-                <span className="text-xs text-emerald-600 dark:text-emerald-400 underline ml-1 font-medium">Click to maximize</span>
+                <Shield className="w-4 h-4 text-teal-600" />
+                <span>Cybersecurity section minimized (2 projects: ABC Financial Risk Assessment &amp; AI Service Desk Agent)</span>
+                <span className="text-teal-700 font-semibold underline ml-1">Click to maximize</span>
               </div>
             )}
 
             {/* Maximized Content */}
             {isCybersecurityExpanded && (
-              <CardContent className="p-5 md:p-8 space-y-10 animate-fadeIn">
+              <div className="p-5 md:p-8 space-y-10">
                 {cybersecurityProjects.map((project, projectIndex) => (
                   <div 
                     key={project.id}
-                    className="border border-border/80 rounded-xl p-5 md:p-7 bg-card/60 backdrop-blur-sm shadow-sm space-y-6"
+                    className="border border-slate-200 rounded-xl p-5 md:p-7 bg-white shadow-xs space-y-6"
                   >
                     {/* Project Top Header */}
-                    <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="flex flex-wrap items-start justify-between gap-4 pb-4 border-b border-slate-100">
                       <div className="space-y-2 flex-1 min-w-[280px]">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <Badge className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs">
+                        <div className="flex flex-wrap items-center gap-2 text-xs">
+                          <span className="font-semibold text-teal-800 bg-teal-50 border border-teal-200/80 px-2.5 py-0.5 rounded">
                             {project.role}
-                          </Badge>
-                          <Badge variant="outline" className="text-xs border-emerald-500/30 text-emerald-600 dark:text-emerald-400">
-                            {project.badgeType}
-                          </Badge>
-                          {project.client && (
-                            <Badge variant="secondary" className="text-xs flex items-center gap-1">
-                              <Building2 className="w-3 h-3 text-muted-foreground" />
-                              Client: {project.client}
-                            </Badge>
-                          )}
-                          <span className="text-xs text-muted-foreground flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
-                            {project.year}
                           </span>
+                          <span className="text-slate-500 font-medium">·</span>
+                          <span className="text-slate-600 font-medium">
+                            {project.badgeType}
+                          </span>
+                          {project.client && (
+                            <>
+                              <span className="text-slate-400">·</span>
+                              <span className="text-slate-600 flex items-center gap-1">
+                                <Building2 className="w-3.5 h-3.5 text-slate-400" />
+                                {project.client}
+                              </span>
+                            </>
+                          )}
+                          <span className="text-slate-400">·</span>
+                          <span className="text-slate-500">{project.year}</span>
                         </div>
-                        <h4 className="text-xl md:text-2xl font-bold text-foreground leading-tight">
+                        <h4 className="text-xl md:text-2xl font-bold text-navy-900 leading-tight">
                           {project.title}
                         </h4>
                       </div>
@@ -473,7 +470,7 @@ export function ProjectsSection() {
                       {/* Demo Link / Code Action Buttons */}
                       <div className="flex flex-wrap items-center gap-2">
                         {project.demoUrl && (
-                          <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs shadow-sm">
+                          <Button asChild size="sm" className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold shadow-xs">
                             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
                               View Live Demo
@@ -481,23 +478,23 @@ export function ProjectsSection() {
                           </Button>
                         )}
                         {project.codeUrl && (
-                          <Button asChild variant="outline" size="sm" className="text-xs">
+                          <Button asChild variant="outline" size="sm" className="text-xs border-slate-300 text-navy-900 hover:bg-slate-50">
                             <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                              <Github className="w-3.5 h-3.5 mr-1.5" />
+                              <Github className="w-3.5 h-3.5 mr-1.5 text-navy-900" />
                               View Code
                             </a>
                           </Button>
                         )}
                         {!project.demoUrl && (
-                          <Badge variant="outline" className="text-xs text-muted-foreground py-1.5 px-3">
+                          <span className="text-xs font-medium text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded">
                             Assessment Report
-                          </Badge>
+                          </span>
                         )}
                       </div>
                     </div>
 
                     {/* Overview Text */}
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    <p className="text-sm md:text-base text-slate-700 leading-relaxed">
                       {project.overview}
                     </p>
 
@@ -505,40 +502,40 @@ export function ProjectsSection() {
                     {project.keyHighlights && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                         {project.keyHighlights.map((hl, idx) => (
-                          <div key={idx} className="bg-secondary/30 p-3 rounded-lg border border-border/50 text-xs">
-                            <span className="text-muted-foreground block font-medium mb-1">{hl.label}</span>
-                            <span className="font-semibold text-foreground text-xs md:text-sm">{hl.value}</span>
+                          <div key={idx} className="bg-slate-50 p-3 rounded-lg border border-slate-200/80 text-xs">
+                            <span className="text-slate-500 block font-medium mb-1">{hl.label}</span>
+                            <span className="font-semibold text-navy-900 text-xs md:text-sm">{hl.value}</span>
                           </div>
                         ))}
                       </div>
                     )}
 
                     {/* Tools & Frameworks */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-border/50">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-1">
                       <div>
-                        <h5 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
-                          <Terminal className="w-3.5 h-3.5 text-emerald-500" />
-                          Tools & Technologies:
+                        <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 flex items-center gap-1.5">
+                          <Terminal className="w-3.5 h-3.5 text-teal-600" />
+                          Tools &amp; Environment:
                         </h5>
                         <div className="flex flex-wrap gap-1.5">
                           {project.tools.map((tool, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
+                            <span key={idx} className="text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 px-2 py-0.5 rounded">
                               {tool}
-                            </Badge>
+                            </span>
                           ))}
                         </div>
                       </div>
 
                       <div>
-                        <h5 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
-                          <Shield className="w-3.5 h-3.5 text-emerald-500" />
-                          Frameworks & Standards:
+                        <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 flex items-center gap-1.5">
+                          <Shield className="w-3.5 h-3.5 text-teal-600" />
+                          Frameworks &amp; Compliance Standards:
                         </h5>
                         <div className="flex flex-wrap gap-1.5">
                           {project.frameworks.map((fw, idx) => (
-                            <Badge key={idx} variant="outline" className="text-xs border-primary/30 text-primary">
+                            <span key={idx} className="text-xs font-medium bg-teal-50 text-teal-800 border border-teal-200 px-2 py-0.5 rounded">
                               {fw}
-                            </Badge>
+                            </span>
                           ))}
                         </div>
                       </div>
@@ -547,16 +544,14 @@ export function ProjectsSection() {
                     {/* Specific Project 1 Tasks: "What I Did" Breakdown */}
                     {project.tasks && (
                       <div className="pt-2">
-                        <div className="flex items-center justify-between mb-3">
-                          <div>
-                            <h5 className="text-base font-bold text-foreground flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4 text-emerald-500" />
-                              What I Did: Assessment Execution Phases
-                            </h5>
-                            <p className="text-xs text-muted-foreground">
-                              Click on any phase to view details on tools, findings, and findings evaluation.
-                            </p>
-                          </div>
+                        <div className="mb-3">
+                          <h5 className="text-sm font-bold text-navy-900 flex items-center gap-2">
+                            <CheckCircle className="w-4 h-4 text-teal-600" />
+                            What I Did: Assessment Execution Phases
+                          </h5>
+                          <p className="text-xs text-slate-500 mt-0.5">
+                            Click on any phase to review diagnostic methodology, scan results, and mitigation rationale.
+                          </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -569,30 +564,30 @@ export function ProjectsSection() {
                                 key={task.id} 
                                 className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer ${
                                   isSelected 
-                                    ? "bg-secondary/40 border-emerald-500 shadow-sm ring-1 ring-emerald-500/30" 
-                                    : "bg-card/40 border-border/70 hover:border-emerald-500/40 hover:bg-secondary/20"
+                                    ? "bg-teal-50/40 border-teal-500 shadow-xs ring-1 ring-teal-500/20" 
+                                    : "bg-slate-50/50 border-slate-200 hover:border-teal-400 hover:bg-slate-50"
                                 }`}
                                 onClick={() => setActiveCyberTask(isSelected ? null : taskId)}
                               >
                                 <div className="flex items-start gap-3">
-                                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 flex-shrink-0 mt-0.5">
+                                  <div className="w-7 h-7 rounded-md bg-teal-100/70 border border-teal-200 flex items-center justify-center text-teal-700 flex-shrink-0 mt-0.5">
                                     <IconComponent className="w-4 h-4" />
                                   </div>
                                   <div className="flex-1">
                                     <div className="flex items-center justify-between">
-                                      <span className="font-semibold text-xs md:text-sm text-foreground">
+                                      <span className="font-semibold text-xs md:text-sm text-navy-900">
                                         {task.id}. {task.title}
                                       </span>
-                                      <span className="text-[10px] text-muted-foreground uppercase tracking-wide">
-                                        {isSelected ? "Less" : "Details"}
+                                      <span className="text-[10px] text-teal-700 font-semibold uppercase tracking-wide">
+                                        {isSelected ? "Hide" : "Details"}
                                       </span>
                                     </div>
-                                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                                       {task.summary}
                                     </p>
                                     
                                     {isSelected && (
-                                      <div className="mt-3 pt-3 border-t border-border/50 text-xs text-foreground/90 bg-background/50 p-3 rounded-lg leading-relaxed animate-fadeIn">
+                                      <div className="mt-3 pt-3 border-t border-teal-100 text-xs text-slate-700 bg-white p-3 rounded-lg leading-relaxed shadow-2xs">
                                         <p>{task.details}</p>
                                       </div>
                                     )}
@@ -608,19 +603,19 @@ export function ProjectsSection() {
                     {/* Specific Project 2 Steps: "How It Works" Workflow */}
                     {project.steps && (
                       <div className="pt-2">
-                        <h5 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
-                          <Terminal className="w-4 h-4 text-emerald-500" />
-                          How It Works: Guided Self-Service & Escalation Workflow
+                        <h5 className="text-sm font-bold text-navy-900 mb-3 flex items-center gap-2">
+                          <Terminal className="w-4 h-4 text-teal-600" />
+                          How It Works: Guided Self-Service &amp; Escalation Workflow
                         </h5>
-                        <div className="space-y-2.5">
+                        <div className="space-y-2">
                           {project.steps.map((step) => (
-                            <div key={step.step} className="flex items-start gap-3 p-3 rounded-lg bg-secondary/20 border border-border/50">
-                              <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                            <div key={step.step} className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200/80">
+                              <div className="w-6 h-6 rounded-md bg-navy-900 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                                 {step.step}
                               </div>
                               <div className="flex-1 text-xs">
-                                <strong className="text-foreground font-semibold block mb-0.5">{step.title}</strong>
-                                <span className="text-muted-foreground leading-relaxed">{step.description}</span>
+                                <strong className="text-navy-900 font-semibold block mb-0.5">{step.title}</strong>
+                                <span className="text-slate-600 leading-relaxed">{step.description}</span>
                               </div>
                             </div>
                           ))}
@@ -630,17 +625,17 @@ export function ProjectsSection() {
 
                     {/* Benefits & Challenges (For Service Desk Agent) */}
                     {(project.benefits || project.challenges) && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
                         {project.benefits && (
-                          <div className="bg-secondary/20 p-4 rounded-xl border border-border/50">
-                            <h5 className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-3 flex items-center gap-1.5">
-                              <CheckCircle className="w-4 h-4" />
+                          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h5 className="text-xs font-bold uppercase tracking-wider text-teal-800 mb-3 flex items-center gap-1.5">
+                              <CheckCircle className="w-4 h-4 text-teal-600" />
                               Key Benefits:
                             </h5>
-                            <ul className="space-y-2 text-xs text-muted-foreground">
+                            <ul className="space-y-2 text-xs text-slate-600">
                               {project.benefits.map((b, idx) => (
                                 <li key={idx} className="flex items-start gap-2">
-                                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 flex-shrink-0" />
+                                  <span className="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 flex-shrink-0" />
                                   <span>{b}</span>
                                 </li>
                               ))}
@@ -649,15 +644,15 @@ export function ProjectsSection() {
                         )}
 
                         {project.challenges && (
-                          <div className="bg-secondary/20 p-4 rounded-xl border border-border/50">
-                            <h5 className="text-xs font-semibold uppercase tracking-wider text-chart-4 mb-3 flex items-center gap-1.5">
-                              <Lock className="w-4 h-4" />
-                              Challenges & Security Controls:
+                          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h5 className="text-xs font-bold uppercase tracking-wider text-navy-900 mb-3 flex items-center gap-1.5">
+                              <Lock className="w-4 h-4 text-teal-600" />
+                              Challenges &amp; Security Controls:
                             </h5>
-                            <ul className="space-y-2 text-xs text-muted-foreground">
+                            <ul className="space-y-2 text-xs text-slate-600">
                               {project.challenges.map((c, idx) => (
                                 <li key={idx} className="flex items-start gap-2">
-                                  <span className="w-1.5 h-1.5 bg-chart-4 rounded-full mt-1.5 flex-shrink-0" />
+                                  <span className="w-1.5 h-1.5 bg-navy-900 rounded-full mt-1.5 flex-shrink-0" />
                                   <span>{c}</span>
                                 </li>
                               ))}
@@ -668,60 +663,60 @@ export function ProjectsSection() {
                     )}
 
                     {/* Deliverables */}
-                    <div className="p-4 rounded-xl bg-secondary/15 border border-border/60">
-                      <h5 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-2">
-                        <FileText className="w-4 h-4 text-emerald-500" />
-                        Deliverables & Documentation:
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                      <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5 flex items-center gap-2">
+                        <FileText className="w-4 h-4 text-teal-600" />
+                        Verified Deliverables &amp; Documentation:
                       </h5>
                       <div className="flex flex-wrap gap-2">
                         {project.deliverables.map((del, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs py-1 px-2.5 bg-background border-border/80 text-foreground">
+                          <span key={idx} className="text-xs font-medium bg-white text-navy-900 border border-slate-200 py-1 px-2.5 rounded shadow-2xs">
                             ✓ {del}
-                          </Badge>
+                          </span>
                         ))}
                       </div>
                     </div>
                   </div>
                 ))}
-              </CardContent>
+              </div>
             )}
-          </Card>
+          </div>
         </div>
 
         {/* ============================================================== */}
         {/* SECTION 2: AI COURSE WORK PROJECTS (BELOW CYBERSECURITY)       */}
         {/* ============================================================== */}
         <div id="ai-projects" className="scroll-mt-20">
-          <Card className="border-2 border-primary/30 shadow-lg overflow-hidden transition-all duration-300">
-            {/* Collapsible Section Header */}
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            
+            {/* Section Header */}
             <div 
               onClick={() => setIsAiExpanded(!isAiExpanded)}
-              className="p-5 md:p-6 bg-gradient-to-r from-primary/10 via-background to-chart-4/10 border-b border-border/60 cursor-pointer flex items-center justify-between gap-4 select-none hover:bg-muted/40 transition-colors"
+              className="p-5 md:p-6 bg-slate-900 border-b border-slate-800 cursor-pointer flex items-center justify-between gap-4 select-none hover:bg-slate-800 transition-colors"
             >
-              <div className="flex items-center gap-3 md:gap-4 flex-wrap">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="w-10 h-10 md:w-11 md:h-11 rounded-lg bg-teal-500/10 border border-teal-400/30 flex items-center justify-center text-teal-400 flex-shrink-0">
                   <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
                       Artificial Intelligence (AI/ML) Course Work
                     </h3>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary border border-primary/20 text-xs font-semibold">
+                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded bg-white/10 text-slate-200 border border-white/20">
                       6 Projects
-                    </Badge>
+                    </span>
                   </div>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-0.5">
+                  <p className="text-xs md:text-sm text-slate-300 mt-0.5">
                     End-to-end generative AI, prompt engineering, predictive modeling, and bias auditing
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 flex-shrink-0">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="hidden sm:flex items-center gap-1.5 text-xs border-primary/30 hover:bg-primary/10"
+                <button
+                  type="button"
+                  className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsAiExpanded(!isAiExpanded);
@@ -729,136 +724,117 @@ export function ProjectsSection() {
                 >
                   {isAiExpanded ? (
                     <>
-                      <ChevronUp className="w-4 h-4" />
-                      Minimize Section
+                      <ChevronUp className="w-3.5 h-3.5" />
+                      Minimize
                     </>
                   ) : (
                     <>
-                      <ChevronDown className="w-4 h-4" />
-                      Maximize Section
+                      <ChevronDown className="w-3.5 h-3.5" />
+                      Maximize
                     </>
                   )}
-                </Button>
-                <div className="p-2 rounded-lg bg-secondary/60 sm:hidden">
+                </button>
+                <div className="p-1.5 rounded-md text-white sm:hidden">
                   {isAiExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </div>
             </div>
 
-            {/* Minimized State Bar */}
+            {/* Minimized State Notice */}
             {!isAiExpanded && (
               <div 
                 onClick={() => setIsAiExpanded(true)}
-                className="p-4 bg-muted/20 text-center cursor-pointer hover:bg-muted/40 transition-colors text-sm text-muted-foreground flex items-center justify-center gap-2"
+                className="p-4 bg-slate-50 text-center cursor-pointer hover:bg-slate-100 transition-colors text-xs md:text-sm text-slate-600 flex items-center justify-center gap-2"
               >
-                <Sparkles className="w-4 h-4 text-primary" />
-                <span>Section minimized: <strong>6 AI/ML Coursework Projects</strong> (SmartWater SA, Cosmic Quill, AI Resume Builder, etc.)</span>
-                <span className="text-xs text-primary underline ml-1 font-medium">Click to maximize</span>
+                <Sparkles className="w-4 h-4 text-teal-600" />
+                <span>AI/ML section minimized (6 projects: SmartWater SA, Cosmic Quill, AI Resume Builder, etc.)</span>
+                <span className="text-teal-700 font-semibold underline ml-1">Click to maximize</span>
               </div>
             )}
 
             {/* Maximized Content */}
             {isAiExpanded && (
-              <CardContent className="p-5 md:p-8 animate-fadeIn">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-5 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {displayedAiProjects.map((project, index) => (
-                    <Card key={index} className="h-full flex flex-col animate-slideInUp transition-all duration-300 hover:scale-[1.01] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/50">
-                      <CardHeader className="pb-4">
+                    <Card key={index} className="h-full flex flex-col bg-white border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+                      <CardHeader className="p-5 pb-3">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <Badge variant="outline" className="text-xs">
+                            <div className="flex items-center gap-2 text-xs text-slate-500 mb-1.5">
+                              <span className="font-semibold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-200/60">
                                 Week {index + 2}
-                              </Badge>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <Calendar className="w-3 h-3" />
+                              </span>
+                              <span>·</span>
+                              <span className="flex items-center gap-1">
+                                <Calendar className="w-3 h-3 text-slate-400" />
                                 2024
-                              </div>
+                              </span>
                             </div>
-                            <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
+                            <CardTitle className="text-lg font-bold text-navy-900 leading-snug">{project.title}</CardTitle>
                           </div>
                         </div>
                       </CardHeader>
 
-                      <CardContent className="flex-1 flex flex-col gap-4">
-                        {(!project.videoUrl || project.title === "Bias Audit Report") ? (
-                          <div className="w-full h-32 bg-muted/50 rounded-lg border-2 border-dashed border-muted-foreground/25 relative overflow-hidden">
-                            <img 
-                              src={project.imageUrl} 
-                              alt={`${project.title} Preview`} 
-                              className="w-full h-full object-cover rounded-lg"
-                            />
-                          </div>
-                        ) : (
-                          <div 
-                            className="w-full h-32 bg-muted/50 rounded-lg border-2 border-dashed border-muted-foreground/25 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform"
-                            onClick={() => {
-                              window.open(project.videoUrl, '_blank');
-                            }}
-                          >
-                            <img 
-                              src={project.imageUrl} 
-                              alt={`${project.title} Demo`} 
-                              className="w-full h-full object-cover rounded-lg"
-                            />
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-lg">
-                              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                                <span className="text-white">▶</span>
-                              </div>
-                            </div>
-                          </div>
-                        )}
+                      <CardContent className="p-5 pt-0 flex-1 flex flex-col gap-4">
+                        <div className="w-full h-32 bg-slate-100 rounded-lg border border-slate-200 relative overflow-hidden">
+                          <img 
+                            src={project.imageUrl} 
+                            alt={`${project.title} Preview`} 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
 
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
                           {project.description}
                         </p>
 
-                        <div className="space-y-3">
+                        <div className="space-y-3 pt-1 border-t border-slate-100">
                           <div>
-                            <h4 className="text-sm mb-2 font-medium">Technologies:</h4>
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">Technologies:</span>
                             <div className="flex flex-wrap gap-1">
                               {project.technologies.map((tech, techIndex) => (
-                                <Badge key={techIndex} variant="secondary" className="text-xs">
+                                <span key={techIndex} className="text-xs font-medium bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
                                   {tech}
-                                </Badge>
+                                </span>
                               ))}
                             </div>
                           </div>
 
                           <div>
-                            <h4 className="text-sm mb-2 font-medium">Key Features:</h4>
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Key Features:</span>
                             <ul className="space-y-1">
                               {project.features.slice(0, 3).map((feature, featureIndex) => (
-                                <li key={featureIndex} className="text-xs text-muted-foreground flex items-start gap-2">
-                                  <span className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></span>
-                                  {feature}
+                                <li key={featureIndex} className="text-xs text-slate-600 flex items-start gap-1.5">
+                                  <span className="w-1.5 h-1.5 bg-teal-600 rounded-full mt-1.5 flex-shrink-0" />
+                                  <span>{feature}</span>
                                 </li>
                               ))}
                             </ul>
                           </div>
 
                           <div>
-                            <h4 className="text-sm mb-2 font-medium">Deliverables:</h4>
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Deliverables:</span>
                             <div className="flex flex-wrap gap-1">
                               {project.deliverables.map((deliverable, delIndex) => (
-                                <Badge key={delIndex} variant="outline" className="text-xs">
+                                <span key={delIndex} className="text-xs bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">
                                   {deliverable}
-                                </Badge>
+                                </span>
                               ))}
                             </div>
                           </div>
                         </div>
 
-                        <div className="flex gap-2 mt-auto pt-4">
-                          <Button asChild variant="outline" size="sm" className="flex-1">
+                        <div className="flex gap-2 mt-auto pt-4 border-t border-slate-100">
+                          <Button asChild variant="outline" size="sm" className="flex-1 text-xs border-slate-300 text-navy-900 hover:bg-slate-50">
                             <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-3 h-3 mr-2" />
+                              <ExternalLink className="w-3.5 h-3.5 mr-1.5 text-teal-600" />
                               Demo
                             </a>
                           </Button>
-                          <Button asChild variant="outline" size="sm" className="flex-1">
+                          <Button asChild variant="outline" size="sm" className="flex-1 text-xs border-slate-300 text-navy-900 hover:bg-slate-50">
                             <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                              <Github className="w-3 h-3 mr-2" />
+                              <Github className="w-3.5 h-3.5 mr-1.5 text-navy-900" />
                               Code
                             </a>
                           </Button>
@@ -868,31 +844,32 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* AI Section Show More / Less button if toggled */}
+                {/* AI Section Show More / Less button */}
                 <div className="text-center mt-8">
                   <Button 
                     onClick={() => setShowAllAiProjects(!showAllAiProjects)}
                     variant="outline"
                     size="sm"
-                    className="px-6 py-2 hover:scale-105 transition-all duration-300 text-xs"
+                    className="px-5 py-2 text-xs border-slate-300 text-navy-900 hover:bg-slate-50"
                   >
                     {showAllAiProjects ? (
                       <>
-                        <ChevronUp className="w-4 h-4 mr-2" />
+                        <ChevronUp className="w-3.5 h-3.5 mr-1.5" />
                         Show Fewer AI Projects
                       </>
                     ) : (
                       <>
-                        <ChevronDown className="w-4 h-4 mr-2" />
+                        <ChevronDown className="w-3.5 h-3.5 mr-1.5" />
                         View All 6 AI Projects
                       </>
                     )}
                   </Button>
                 </div>
-              </CardContent>
+              </div>
             )}
-          </Card>
+          </div>
         </div>
+
       </div>
     </section>
   );
