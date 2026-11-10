@@ -14,7 +14,7 @@ const overviewItems = [
   {
     icon: FolderKanban,
     title: "Projects",
-    description: "A collection of 6+ hands-on projects from my AI/ML bootcamp, showcasing my end-to-end development skills.",
+    description: "Hands-on coursework projects in Cybersecurity and AI/ML, showcasing practical security assessments and end-to-end development skills.",
     link: "#projects",
     linkText: "View My Projects"
   },

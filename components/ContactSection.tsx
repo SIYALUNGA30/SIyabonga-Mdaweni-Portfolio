@@ -284,8 +284,7 @@ export function ContactSection() {
               </Badge>
             </div>
             <p className="text-muted-foreground mb-4">
-              Actively seeking full-time positions in 
-              IT Support, Aspiring AI/ML engineering,Business Analyst or Web Developer role starting immediately.
+              Actively seeking full-time positions in IT Support, Aspiring AI/ML Engineering, Business Analyst, or Cybersecurity roles starting immediately.
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               <Badge variant="outline">Full-time</Badge>
