@@ -8,7 +8,15 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const navigateToPage = (path: string) => {
-    window.location.hash = path;
+    if (window.location.hash.includes('case-study')) {
+      window.location.hash = path;
+    } else {
+      window.location.hash = path;
+      const target = document.getElementById(path);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -26,7 +34,7 @@ export function Layout({ children }: LayoutProps) {
                 Siyabonga Mdaweni · Portfolio
               </p>
               <p className="text-xs text-slate-400">
-                Cybersecurity &amp; IT Support Specialist · AI/ML Practitioner
+                Cybersecurity &amp; IT Support Specialist · CompTIA Network+ Certified
               </p>
               <p className="text-xs text-slate-500 pt-1">
                 &copy; {new Date().getFullYear()} Siyabonga Mdaweni. All rights reserved.
@@ -41,34 +49,16 @@ export function Layout({ children }: LayoutProps) {
                 About
               </button>
               <button 
-                onClick={() => navigateToPage('projects')}
-                className="hover:text-teal-400 hover:underline transition-colors"
-              >
-                Projects
-              </button>
-              <button 
                 onClick={() => navigateToPage('skills')}
                 className="hover:text-teal-400 hover:underline transition-colors"
               >
                 Skills
               </button>
               <button 
-                onClick={() => navigateToPage('education')}
+                onClick={() => navigateToPage('projects')}
                 className="hover:text-teal-400 hover:underline transition-colors"
               >
-                Education
-              </button>
-              <button 
-                onClick={() => navigateToPage('experience')}
-                className="hover:text-teal-400 hover:underline transition-colors"
-              >
-                Experience
-              </button>
-              <button 
-                onClick={() => navigateToPage('references')}
-                className="hover:text-teal-400 hover:underline transition-colors"
-              >
-                References
+                Projects
               </button>
               <button 
                 onClick={() => navigateToPage('contact')}

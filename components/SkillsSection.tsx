@@ -113,7 +113,7 @@ export function SkillsSection() {
   const displayedSkills = showAllSkills ? skillCategories : skillCategories.slice(0, 2);
 
   return (
-    <section id="skills" className="py-16 md:py-20 bg-slate-50/50 border-b border-slate-200">
+    <section id="skills" className="py-16 md:py-20 bg-slate-50/50 border-b border-slate-200 scroll-mt-14">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header - Focused on Cybersecurity and IT Support */}

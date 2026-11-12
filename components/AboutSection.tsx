@@ -30,7 +30,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 bg-slate-50/50 border-b border-slate-200">
+    <section id="about" className="py-16 md:py-20 bg-slate-50/50 border-b border-slate-200 scroll-mt-14">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}

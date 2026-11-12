@@ -1,60 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { HomePage } from '../pages/HomePage';
-import { AboutPage } from '../pages/AboutPage';
-import { ProjectsPage } from '../pages/ProjectsPage';
-import { SkillsPage } from '../pages/SkillsPage';
-import { EducationPage } from '../pages/EducationPage';
-import { ExperiencePage } from '../pages/ExperiencePage';
-import { ReferencesPage } from '../pages/ReferencesPage';
-import { ContactPage } from '../pages/ContactPage';
+import { CaseStudyPage } from '../pages/CaseStudyPage';
 
 export function Router() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentHash, setCurrentHash] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      setCurrentPage(hash || 'home');
-      window.scrollTo(0, 0);
+      const rawHash = window.location.hash.replace(/^#\/?/, '');
+      setCurrentHash(rawHash);
+
+      // If it's a section on the main page (about, skills, projects, references, contact, hero)
+      const sectionId = rawHash.split('?')[0];
+      if (['about', 'skills', 'projects', 'references', 'contact', 'hero', 'overview', 'cybersecurity-coursework', 'ai-coursework'].includes(sectionId)) {
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else if (!rawHash.startsWith('case-study')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     };
 
-    // Set initial page
     handleHashChange();
-
-    // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
-
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage />;
-      case 'about':
-        return <AboutPage />;
-      case 'projects':
-        return <ProjectsPage />;
-      case 'skills':
-        return <SkillsPage />;
-      case 'education':
-        return <EducationPage />;
-      case 'experience':
-        return <ExperiencePage />;
-      case 'references':
-        return <ReferencesPage />;
-      case 'contact':
-        return <ContactPage />;
-      default:
-        return <HomePage />;
-    }
-  };
+  // Check for case study route: case-study/:id
+  if (currentHash.startsWith('case-study/')) {
+    const projectId = currentHash.replace('case-study/', '');
+    return (
+      <div key={`case-study-${projectId}`} className="animate-fadeIn w-full">
+        <CaseStudyPage projectId={projectId} />
+      </div>
+    );
+  }
 
+  // Single main page with short sections: About, Skills, Projects, References, Contact
   return (
-    <div key={currentPage} className="animate-fadeIn w-full">
-      {renderPage()}
+    <div key="single-main-page" className="animate-fadeIn w-full">
+      <HomePage />
     </div>
   );
 }
